@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "sass:build": "sass --no-source-map scss:css",
-    "sass:watch": "sass --no-source-map --watch scss:css"
+    "sass:watch": "sass --no-source-map --watch scss:css",
+    "run:sass": "sass src/styles.scss src/styles.css"
   },
-  "author": "Brad Traversy",
+  "author": "Will Powell",
   "license": "MIT",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
     "bootstrap": "^5.2.3",
-    "sass": "^1.62.0"
+    "sass": "^1.84.0"
   }
 }
