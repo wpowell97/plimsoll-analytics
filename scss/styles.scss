@@ -258,6 +258,111 @@ clear:both;
   width: 1500px;
 }
 
+.services {
+    background: url('../images/swirls.png') no-repeat center center;
+    background-size: fixed;
+    background-attachment: fixed;
+}
+
+.stat-title {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+.stat-value {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+.to-top-btn {
+    position: fixed;
+    z-index: 20;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background-color: #31477e;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.to-top-btn {
+  &:hover {
+    background-color: #d14247;
+  }
+}
+
+.to-top-btn {
+  img {
+    margin-bottom: 0.25rem;
+    width: 18px;
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+.stat-column {
+  background-color: #42677b;
+  padding: 15px;
+  padding-top: 40px;
+  margin: 20px;
+  color: white; /* Ensures text is readable */
+}
+
+.findings p {
+  color: white;
+}
+
+.findings h3 {
+  color: white;
+}
+
+.card-body-2 {
+  border: 1px solid #a5acb3;
+  padding: 10px;
+}
+
+.legal p {
+  font-size: 16px;
+  width: 100%;
+}
+
+.vertical-decoration {
+  top: 12%;
+  width: 24px;
+}
+
+.image-person .vertical-decoration {
+  top: 5%;
+  right: 0;
+  width: 400px;
+  top: 12%;
+}
+
+.blue-background {
+  background-color: blue;
+}
+.blue-background:after{
+content:'';
+display:block;
+clear:both;
+}
+
+.gray-background {
+  background-color: #eaeaea;
+}
+
+.signature .swirl-lines {
+  right: -200px;
+  width: 1500px;
+}
+
 @media (max-width: 1000px) {
   .hero .image-container {
     display: flex;
@@ -275,6 +380,24 @@ clear:both;
   .navbar {
     .btn-outline-secondary {
       margin-top: 20px;
+    }
+
+    .xl-text {
+        font-size: 50px;
+      }
+    
+      .navbar {
+        .btn-outline-secondary {
+          margin-top: 20px;
+        }
+      }
+
+      .findings {
+        padding: 40px 0 !important;
+    }
+
+    .findings h2 {
+        text-align: center;
     }
 
     .xl-text {
