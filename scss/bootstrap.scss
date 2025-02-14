@@ -1,15 +1,16 @@
 // Font
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
-// Colors
-$primary: #c167ef;
-$secondary: #10bcee;
-$dark: #2b3041;
+// Colours
+$primary: #2c4685;
+$secondary: #2c4685;
+$dark: #1d1e33;
 $light: #f3f6f9;
+$headings-color: $dark;
 
 //Navbar
 $navbar-padding-y: 1rem;
-$navbar-dark-color: #fff;
+$navbar-dark-color: black;
 $navbar-dark-hover-color: $secondary;
 
 //Buttons
@@ -43,7 +44,8 @@ $spacers: (
 ) !default;
 
 $line-height-base: 1.7;
-$headings-margin-bottom: $spacer * 1;
+$headings-font-weight: bold;
+$headings-margin-bottom: $spacer * 1 !default;
 
 $enable-negative-margins: true;
 

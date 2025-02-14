@@ -1,7 +1,8 @@
-# Ebook Website
+# Plimsoll Brochure Website
 
-Bootstrap website for downloading a free E-book. This website has a light, business-like design.
+Bootstrap website for showcasing the Plimsoll Brochure. This website has a light, business-like design.
 
+<!-- change the below -->
 <img src="./images/screen.png"  />
 
 ## Features
