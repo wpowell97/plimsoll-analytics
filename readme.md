@@ -3,7 +3,7 @@
 Bootstrap website for showcasing the Plimsoll Brochure. This website has a light, business-like design.
 
 <!-- change the below -->
-<img src="/images/website-screenshot.png"  />
+<img src="./images/screen.png"  />
 
 ## Features
 
