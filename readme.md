@@ -3,14 +3,14 @@
 Bootstrap website for showcasing the Plimsoll Brochure. This website has a light, business-like design.
 
 <!-- change the below -->
-<img src="./images/screen.png"  />
+<img src="/images/website-screenshot.png"  />
 
 ## Features
 
 - Modern layout with custom colors/styles/backgrounds
 - Responsive design
 - Sticky navbar with style changes on scroll
-- Bootstrap modals
+- Report Data
 - Findings
 - Simplified Action
 - Contact page 
