@@ -7,6 +7,7 @@
 }
 .navbar {
   transition: all 0.5s ease-in-out;
+  z-index: 1050; /* Ensure it’s above other elements */
 }
 .navbar-sticky {
   background: #fff;
@@ -173,6 +174,7 @@
     .btn-outline-secondary {
       margin-top: 20px;
     }
+    
     .navbar .btn:hover {
       background-color: #d14247 !important;
       border-color: #d14247;
