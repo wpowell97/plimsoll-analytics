@@ -2,24 +2,24 @@
 
 Bootstrap website for showcasing the Plimsoll Brochure. This website has a light, business-like design.
 
-<!-- change the below -->
 <img src="/images/website-screenshot.png"  />
 
 ## Features
 
-- Modern layout with custom colors/styles/backgrounds
+- Modern layout with custom colours/styles/backgrounds
 - Responsive design
 - Sticky navbar with style changes on scroll
+- Jump to top button
 - Report Data
-- Findings
-- Simplified Action
-- Contact page 
+- Findings Information
+- Simplified Action Objectives
+- Contact Page
 
 ## Usage
 
 This website is built with [Bootstrap](https://getbootstrap.com/) and [Sass](https://sass-lang.com/). It uses [Font Awesome](https://fontawesome.com/) for icons.
 
-In order to customize this website, you need to install [Node.js](https://nodejs.org/en/). Then, clone this repository and run:
+In order to customise this website, you need to install [Node.js](https://nodejs.org/en/). Then, clone this repository and run:
 
 ```bash
 npm install
