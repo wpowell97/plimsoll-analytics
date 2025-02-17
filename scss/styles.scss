@@ -53,6 +53,7 @@
 .stat-value {
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .vertical-decoration {
@@ -131,6 +132,10 @@
 }
 .gray-background {
   background-color: #eaeaea;
+}
+
+.p-dear {
+  font-size: 22px;
 }
 @media (max-width: 1000px) {
   .hero .image-container {
