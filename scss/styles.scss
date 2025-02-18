@@ -32,7 +32,7 @@
 }
 .quote-bg {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/quote-background.webp') center center no-repeat;
-  background-size: fixed;
+  background-size: cover;
 }
 .navbar .btn:hover {
   background-color: #d14247 !important;
@@ -126,6 +126,18 @@
 .p-dear {
   font-size: 22px;
 }
+.p-dear-2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: fit-content;
+}
+.red-box {
+  width: fit-content;
+}
 @media (max-width: 1000px) {
   .hero .image-container {
     display: flex;
@@ -151,6 +163,12 @@
   }
   .signature {
     margin-top: 20px !important;
+  }
+  .analysis {
+    .analysis .image-container {
+      display: flex;
+      justify-content: center;
+  }
   }
   .navbar {
     background: #fff;
