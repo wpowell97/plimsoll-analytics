@@ -1,6 +1,6 @@
-# Plimsoll Brochure Website
+# Plimsoll Report Website
 
-Bootstrap website for showcasing the Plimsoll Brochure. This website has a light, business-like design.
+Bootstrap website for showcasing customer report data. This website has a light, business-like design.
 
 <img src="/images/website-screenshot.png"  />
 
