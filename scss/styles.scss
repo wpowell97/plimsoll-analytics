@@ -19,24 +19,20 @@
   height: auto;
   display: block;
 }
-.services {
-  background: url("../images/swirls.png") no-repeat center center;
-  background-size: fixed;
-  background-attachment: fixed;
-}
 .stat-title {
   font-size: 1rem;
   margin-bottom: 5px;
-  color: black;
+  color: white;
 }
 .stat-value {
   text-transform: uppercase;
   font-weight: bold;
-  color: black;
+  font-size: 1.5rem;
+  color: white;
 }
-.signature .swirl-lines {
-  right: -200px;
-  width: 1500px;
+.quote-bg {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/quote-background.webp') center center no-repeat;
+  background-size: fixed;
 }
 .navbar .btn:hover {
   background-color: #d14247 !important;
@@ -51,12 +47,6 @@
   font-size: 1rem;
   margin-bottom: 5px;
 }
-.stat-value {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
 .vertical-decoration {
   top: 12%;
   width: 24px;
@@ -66,11 +56,6 @@
   right: 0;
   width: 400px;
   top: 12%;
-}
-.report {
-  background: url("../images/swirls.png") no-repeat center center;
-  background-size: fixed;
-  background-attachment: fixed;
 }
 .stat-title {
   font-size: 1rem;
@@ -112,29 +97,32 @@
   margin: 20px;
   color: white; /* Ensures text is readable */
 }
-.findings p {
+.report p {
   color: white;
+}
+.report h3 {
+  color: white;
+}
+.report h4 {
+  color: white;
+}
+.findings p {
+  color: black;
 }
 .findings h3 {
-  color: white;
+  color: #1e1e33;
 }
 .card-body-2 {
-  border: 1px solid #a5acb3;
+  border: 2px solid #49c8ef;
   padding: 10px;
 }
 .legal p {
   font-size: 16px;
   width: 100%;
 }
-.blue-background:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 .gray-background {
   background-color: #eaeaea;
 }
-
 .p-dear {
   font-size: 22px;
 }
@@ -143,11 +131,17 @@
     display: flex;
     justify-content: center;
   }
-  .here .text-container {
+  .hero .text-container {
     text-align: center;
   }
   .xl-text {
     font-size: 50px;
+  }
+  .report {
+    padding: 40px 0 !important;
+  }
+  .report h2 {
+    text-align: center;
   }
   .findings {
     padding: 40px 0 !important;
@@ -157,9 +151,6 @@
   }
   .signature {
     margin-top: 20px !important;
-  }
-  .signature .swirl-lines {
-    top: 300px;
   }
   .navbar {
     background: #fff;
