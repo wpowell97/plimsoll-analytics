@@ -8,11 +8,12 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="/images/logo-fav.png" />
-    <title>Plimsoll Publishing Brochure</title>
+    <title>Plimsoll Report</title>
   </head>
   <body>
     <!-- Navigation -->
@@ -37,7 +38,7 @@
             <li class="nav-item pe-2"><a href="index.html" class="nav-link fw-semibold">Home</a></li>
             <li class="nav-item pe-2"><a href="#report" class="nav-link fw-semibold">Report</a></li>
             <li class="nav-item pe-2"><a href="#findings" class="nav-link fw-semibold">Findings</a></li>
-            <li class="nav-item pe-2"><a href="#simplified-action" class="nav-link fw-semibold">Simplified Action</a></li>
+            <li class="nav-item pe-2"><a href="#order-today" class="nav-link fw-semibold">Order Today</a></li>
             <li class="nav-item">
               <a href="contact.html" class="nav-link btn btn-outline-dark fw-semibold px-4 mx-4">Contact</a>
             </li>
@@ -53,50 +54,69 @@
       <div class="hero text-dark pt-7 mb-5">
         <div class="container-xl">
           <div class="row">
-            <div class="col-md-6">
-              <div class="image-container mb-2 px-4">
-                <img
-                  src="/images/why-plimsoll.png"
-                  alt="Why Plimsoll"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div
-                class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5"
+                class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center"
               >
-                <h1 class="display-2 fw-bold">Data<br>Analysis<br>Made Easy.</h1>
+                <h1 class="display-2 fw-bold">Welcome {{Your Company}}</h1>
               </div>
             </div>
           </div>
+          <div class="col-md-12">
+            <div
+              class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center"
+            >
+              <h1 class="display-2 fw-bold">Above the Line</h1>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </header>
 
-    <!-- Swirl -->
+    <!-- Red Line -->
     <div class="p-0">
-      <img src="images/swirl-lines-2.svg" alt="Swirls Image" class="swirls" />
+      <img src="images/swirl-lines-2.svg" alt="Red Line" class="red-line" />
     </div>
+
+          <!--Thinking-->
+          <div class="hero mb-5 findings bg-dark py-6 overflow-hidden">
+            <div class="container-xl">
+              <div class="row">
+                <div class="col-md-12">
+                  <div
+                    class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center bg-dark"
+                  >
+                    <h1 class="display-2 fw-bold text-light animate__animated animate__lightSpeedInLeft hidden">Thinking.</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </header>
 
 <!-- Report -->
     <section id="report" class="statement my-2 container">
         <div class="row">
           <div class="col-12">
             <div class="p-3">
-              <p class="p-dear">Dear Mr. Lippiett,</p>
+              <p class="p-dear">Dear Jason</p>
               <h4><strong>
-                The Civil Engineering landscape is undergoing a seismic shift, and the 2024 Plimsoll Report
-                shines a spotlight on the challenges and opportunities ahead. Alarmingly, 403 of the UK's top companies have
-                been flagged with a Danger rating-an essential signal for action in these uncertain times.
+                The 2025 Plimsoll Analysis Report has revealed a significant shift in the Recruitment Agencies landscape, 
+                with 416 of the UK’s top companies identified under a Danger rating.
               </strong>
               </h4>
               <p>
-                This report delivers an unrivaled financial health check and valuation of the UK’s 2,400 leading Civil Engineering firms, 
-                offering unparalleled clarity in an ever-evolving market. The stakes are high: 9 out of 10 companies that ultimately failed
-                were previously identified as "Danger" in our analyses. With the market's volatility reaching new heights in 2024, having access to this data
-                isn't valuable-it's critical.
+                This comprehensive analysis, built on the most up-to-date data, provided a clear financial health check 
+                and valuation for the 2400 leading firms in the UK Recruitment Agencies sector.
               </p>
+              <p>
+                History tells us the impact of these ratings: 9 out of 10 companies that ultimately failed were previously 
+                marked as "Danger" in our reports. With market uncertainty reaching unprecedented levels in 2025, this update 
+                is not just timely - its essential.
+              </p>
+              <p>Below, we've highlighted the latest ratings included in this critical edition of the Plimsoll Report:</p>
             </div>
           </div>
         </div>
@@ -105,34 +125,33 @@
     <!-- Stats -->
     <section class="stats container">
       <div class="row my-2 justify-content-center">
-        <h5><strong>What’s in the latest report?</strong></h5>
         <div class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-info">
-          <p class="stat-title">No of companies ratings</p>
-          <h2 class="counter xl-text text-dark" data-target="1394"></h2>
+          <p class="stat-title">No of companies rated</p>
+          <h2 class="counter xl-text text-dark" data-target="1284"></h2>
           <p class="stat-value">strong</p>
         </div>
 
         <div class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-info">
-          <p class="stat-title">No of companies ratings</p>
-          <h2 class="counter xl-text text-dark" data-target="180"></h2>
+          <p class="stat-title">No of companies rated</p>
+          <h2 class="counter xl-text text-dark" data-target="183"></h2>
           <p class="stat-value">good</p>
         </div>
 
         <div class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-info">
-          <p class="stat-title">No of companies ratings</p>
-          <h2 class="counter xl-text text-dark" data-target="186"></h2>
+          <p class="stat-title">No of companies rated</p>
+          <h2 class="counter xl-text text-dark" data-target="243"></h2>
           <p class="stat-value">mediocre</p>
         </div>
 
         <div class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-info">
-          <p class="stat-title">No of companies ratings</p>
-          <h2 class="counter xl-text text-dark" data-target="237"></h2>
+          <p class="stat-title">No of companies rated</p>
+          <h2 class="counter xl-text text-dark" data-target="274"></h2>
           <p class="stat-value">caution</p>
         </div>
 
         <div class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-info">
-          <p class="stat-title">No of companies ratings</p>
-          <h2 class="counter xl-text text-dark" data-target="403"></h2>
+          <p class="stat-title">No of companies rated</p>
+          <h2 class="counter xl-text text-dark" data-target="416"></h2>
           <p class="stat-value">danger</p>
         </div>
       </div>

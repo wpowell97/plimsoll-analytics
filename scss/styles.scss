@@ -14,7 +14,7 @@
   opacity: 0.9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.swirls {
+.red-line {
   width: 100%;
   height: auto;
   display: block;
@@ -155,12 +155,6 @@
   .findings h2 {
     text-align: center;
   }
-  .findings {
-    padding: 40px 0 !important;
-  }
-  .findings h2 {
-    text-align: center;
-  }
   .signature {
     margin-top: 20px !important;
   }
@@ -180,6 +174,18 @@
       border-color: #d14247;
       color: white !important;
     }
+  }
+  .animate {
+    height: 200vh; /* Just to allow scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
+    color: white;
+  }
+  .animate-hidden {
+    opacity: 0;
   }
 }
 @media (max-width: 767px) { /* Bootstrap's md breakpoint */

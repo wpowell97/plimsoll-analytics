@@ -59,3 +59,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.querySelector('#to-top').addEventListener ('click', scrollToTop);
   
+  document.addEventListener("DOMContentLoaded", function () {
+    const target = document.querySelector("h1");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove("hidden");
+                    entry.target.classList.add("animate__lightSpeedInLeft");
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    observer.observe(target);
+});
