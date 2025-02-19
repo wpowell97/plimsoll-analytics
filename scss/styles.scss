@@ -39,21 +39,9 @@
   border-color: #d14247;
   color: white !important;
 }
-.stat-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-.stat-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
 .vertical-decoration {
   top: 12%;
   width: 24px;
-}
-.stat-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
 }
 .to-top-btn {
   position: fixed;
@@ -129,9 +117,6 @@
   padding-right: 10px;
   width: fit-content;
 }
-.exclusive {
-  font-size: 32px;
-}
 .red-box {
   width: fit-content;
 }
@@ -146,11 +131,10 @@
 }
 .pricing-box {
   background: #de2a37;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 10px 15px;
   width: fit-content;
+  text-align: center; // Ensures text inside is center-aligned
+  margin: 0 auto; // Centers the box horizontally
 }
 .placing-order {
   background: #de2a37;
