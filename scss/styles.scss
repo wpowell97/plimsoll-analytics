@@ -51,12 +51,6 @@
   top: 12%;
   width: 24px;
 }
-.image-person .vertical-decoration {
-  top: 5%;
-  right: 0;
-  width: 400px;
-  top: 12%;
-}
 .stat-title {
   font-size: 1rem;
   margin-bottom: 5px;
@@ -135,8 +129,31 @@
   padding-right: 10px;
   width: fit-content;
 }
+.exclusive {
+  font-size: 32px;
+}
 .red-box {
   width: fit-content;
+}
+.order-today {
+  background: #de2a37;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: fit-content;
+  margin: auto;
+}
+.pricing-box {
+  background: #de2a37;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: fit-content;
+}
+.placing-order {
+  background: #de2a37;
 }
 @media (max-width: 1000px) {
   .hero .image-container {
