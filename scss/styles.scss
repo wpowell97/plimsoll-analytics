@@ -39,6 +39,11 @@
   border-color: #d14247;
   color: white !important;
 }
+.get-started .btn:hover {
+  background-color: #d14247 !important;
+  border-color: #d14247;
+  color: white !important;
+}
 .vertical-decoration {
   top: 12%;
   width: 24px;
@@ -158,6 +163,7 @@
   }
   .findings {
     padding: 40px 0 !important;
+    background: #dedede !important;
   }
   .findings h2 {
     text-align: center;
@@ -184,6 +190,11 @@
       border-color: #d14247;
       color: white !important;
     }
+  }
+  .get-started .btn:hover {
+    background-color: #d14247 !important;
+    border-color: white;
+    color: white !important;
   }
   .animate {
     height: 200vh; /* Just to allow scrolling */
