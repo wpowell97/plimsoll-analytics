@@ -1,0 +1,24 @@
+{
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceFolder}/${input:programPath}",
+        "args": [],
+        "runtimeExecutable": "node",
+        "cwd": "${workspaceFolder}"
+      }
+    ],
+    "inputs": [
+      {
+        "type": "pickString",
+        "id": "programPath",
+        "description": "Select the entry point file",
+        "options": [
+          "index.js",
+          "js/script.js"
+        ]
+      }
+    ]
+  }
