@@ -111,6 +111,19 @@
 .findings h3 {
   color: #1e1e33;
 }
+.findings-border {
+  position: relative;
+}
+
+.findings-border:after {
+  content: '|';
+  height: 40%; //You can change this if you want smaller/bigger borders
+  width: 2px;
+  position: absolute;
+  right: 0;
+  top: 20%; // If you want to set a smaller height and center it, change this value
+  background-color: #000000; // The color of your border
+}
 .card-body-2 {
   border: 2px solid #55bafd;
   padding: 10px;
@@ -228,5 +241,11 @@
 @media (max-width: 767px) { /* Bootstrap's md breakpoint */
   .sm-border-none {
     border-right: none !important;
+  }
+}
+// Hide border on smaller screens
+@media (max-width: 576px) {
+  .findings-border:after {
+    display: none;
   }
 }
