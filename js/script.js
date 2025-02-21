@@ -92,3 +92,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   userScroll();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const target = document.querySelector('.order-today');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          target.classList.remove('order-today-hidden');
+          target.classList.add('animate__slideInRight');
+          observer.unobserve(entry.target); // Stop observing once it's animated
+        }
+      });
+    }, {
+      threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+  
+    observer.observe(target);
+  });

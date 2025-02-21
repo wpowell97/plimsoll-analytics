@@ -39,6 +39,12 @@
 .quote-bg {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/quote-background.webp') center center no-repeat;
   background-size: cover;
+
+  // Change background on small screens
+  @media (max-width: 576px) {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/order-header.png') center center no-repeat;
+    background-size: cover;
+  }
 }
 .navbar .btn:hover {
   background-color: #d14247 !important;
@@ -127,6 +133,7 @@
   padding-left: 10px;
   padding-right: 10px;
   width: fit-content;
+  border-bottom-right-radius: 1rem;
 }
 .red-box {
   width: fit-content;
@@ -139,6 +146,10 @@
   padding-right: 15px;
   width: fit-content;
   margin: auto;
+  border-bottom-right-radius: 1rem;
+}
+.order-today-hidden {
+  visibility: hidden;
 }
 .pricing-box {
   background: #de2a37;
