@@ -110,3 +110,5 @@ document.addEventListener("DOMContentLoaded", function () {
   
     observer.observe(target);
   });
+
+  import { SpeedInsights } from "@vercel/speed-insights/next"
