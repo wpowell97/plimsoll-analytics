@@ -2,7 +2,7 @@
 
 Bootstrap website for showcasing customer report data. This website has a light, business-like design.
 
-<img src="/images/website-screenshot.png"  />
+<img src="/images/portfolio-screen.png"  />
 
 ## Features
 
