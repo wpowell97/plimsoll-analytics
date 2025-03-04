@@ -4,17 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".stats, .findings");
   const animatedSections = new Set();
 
-  function userScroll() {
-      window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-              navbar.classList.add("navbar-sticky", "scrolled");
-              if (toTopBtn) toTopBtn.classList.add("show");
-          } else {
-              navbar.classList.remove("navbar-sticky", "scrolled");
-              if (toTopBtn) toTopBtn.classList.remove("show");
-          }
-      });
-  }
+function userScroll() {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            // navbar.classList.add("navbar-sticky", "scrolled");
+            if (toTopBtn) toTopBtn.classList.add("show");
+        } else {
+            // navbar.classList.remove("navbar-sticky", "scrolled");
+            if (toTopBtn) toTopBtn.classList.remove("show");
+        }
+    });
+}
+ 
 
   function scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
