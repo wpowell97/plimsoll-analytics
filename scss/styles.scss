@@ -31,18 +31,28 @@
   color: white;
 }
 .counter {
-  color:#55bafd;
+  color: #55bafd;
 }
 .separator {
   border: #55bafd;
 }
 .quote-bg {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/quote-background.webp') center center no-repeat;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("/images/quote-background.webp") center center no-repeat;
   background-size: cover;
 
   // Change background on small screens
   @media (max-width: 576px) {
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/order-header.png') center center no-repeat;
+    background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("/images/order-header.png") center center no-repeat;
     background-size: cover;
   }
 }
@@ -116,7 +126,7 @@
 }
 
 .findings-border:after {
-  content: '|';
+  content: "|";
   height: 40%; //You can change this if you want smaller/bigger borders
   width: 2px;
   position: absolute;
@@ -204,7 +214,7 @@
     .analysis .image-container {
       display: flex;
       justify-content: center;
-  }
+    }
   }
   .navbar {
     background: #fff;
@@ -213,7 +223,7 @@
     .btn-outline-secondary {
       margin-top: 20px;
     }
-    
+
     .navbar .btn:hover {
       background-color: #d14247 !important;
       border-color: #d14247;
@@ -238,7 +248,8 @@
     opacity: 0;
   }
 }
-@media (max-width: 767px) { /* Bootstrap's md breakpoint */
+@media (max-width: 767px) {
+  /* Bootstrap's md breakpoint */
   .sm-border-none {
     border-right: none !important;
   }
@@ -248,7 +259,4 @@
   .findings-border:after {
     display: none;
   }
-}
-.navbar {
-  background-color: white;
 }
