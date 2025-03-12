@@ -45,6 +45,13 @@
     url("/images/quote-background.webp") center center no-repeat;
   background-size: cover;
 
+  .modal {
+    z-index: 1050 !important;
+  }
+  .offcanvas {
+    z-index: 1040 !important;
+  }
+
   // Change background on small screens
   @media (max-width: 576px) {
     background: linear-gradient(
@@ -180,6 +187,18 @@
   width: fit-content;
   text-align: center; // Ensures text inside is center-aligned
   margin: 0 auto; // Centers the box horizontally
+}
+.pricing .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .placing-order {
   background: #de2a37;
