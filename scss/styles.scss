@@ -51,7 +51,6 @@
   .offcanvas {
     z-index: 1040 !important;
   }
-
   // Change background on small screens
   @media (max-width: 576px) {
     background: linear-gradient(
@@ -82,7 +81,6 @@
   z-index: 20;
   bottom: 20px;
   right: 20px;
-  opacity: 0;
   width: 52px;
   height: 52px;
   border: none;
@@ -102,6 +100,9 @@
     margin-bottom: 0.25rem;
     width: 18px;
   }
+}
+.to-top-btn.show {
+  opacity: 1;
 }
 .show {
   opacity: 1;
@@ -133,9 +134,9 @@
 }
 
 .findings-border:after {
-  content: "|";
-  height: 40%; //You can change this if you want smaller/bigger borders
-  width: 2px;
+  content: "";
+  height: 30%; //You can change this if you want smaller/bigger borders
+  width: 1px;
   position: absolute;
   right: 0;
   top: 20%; // If you want to set a smaller height and center it, change this value
@@ -277,5 +278,16 @@
 @media (max-width: 576px) {
   .findings-border:after {
     display: none;
+  }
+}
+.background-plimsoll {
+  background: url("../images/logo-overlay.png") center center no-repeat;
+  background-size: cover;
+  background-size: 20%;
+  background-position: 90% 95%;
+}
+@media (max-width: 576px) {
+  .background-plimsoll {
+    background-image: none;
   }
 }

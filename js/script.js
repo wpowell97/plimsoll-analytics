@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toTopBtn = document.querySelector("#to-top");
    
     // Select sections with the classes "stats" and "findings"
-    const sections = document.querySelectorAll(".stats, .findings");
+    const sections = document.querySelectorAll(".stats, .findings, .order-today, .pricing, .companies");
  
     // Create a set to track which sections have been animated
     const animatedSections = new Set();
