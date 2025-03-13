@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,68 +13,236 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="/images/logo-fav.png" />
-    <title>Plimsoll Report</title>
+    <title>Staging Plimsoll Website</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-      <div class="container">
-        <a href="index.html" class="navbar-brand">
-          <img
-            src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
-            alt="Plimsoll Logo"
-            width=""
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+ <!-- Navigation -->
+
+    <!--Header-->
+    <header class="header">
+      <div class="position-fixed top-0 start-0 mt-3 ms-3 z-3">
+        <a
+          class="btn btn-primary fw-semibold rounded-1"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample"
+          role="button"
+          aria-controls="offcanvasExample"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item pe-2">
-              <a href="index.html" class="nav-link fw-semibold">Home</a>
-            </li>
-            <li class="nav-item pe-2">
-              <a href="index.html#report" class="nav-link fw-semibold"
+          &#9776; Menu
+        </a>
+      </div>
+      
+      <!-- Offcanvas Menu -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <a href="index.html" class="navbar-brand">
+            <img
+              src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
+              alt="Plimsoll Logo"
+            />
+          </a>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li>
+              <a href="#report" class="nav-link" data-bs-dismiss="offcanvas"
                 >Analysis Report</a
               >
             </li>
-            <li class="nav-item pe-2">
-              <a href="index.html#findings" class="nav-link fw-semibold"
+            <li>
+              <a href="#findings" class="nav-link" data-bs-dismiss="offcanvas"
                 >Key Findings</a
               >
             </li>
-            <li class="nav-item pe-2">
-              <a href="index.html#order-today" class="nav-link fw-semibold"
+            <li>
+              <a
+                href="#order-today"
+                class="nav-link"
+                data-bs-dismiss="offcanvas"
                 >Order Today</a
               >
             </li>
-            <li class="nav-item">
-              <a
-                href="contact.html"
-                class="nav-link btn btn-outline-dark fw-semibold px-4 mx-4 rounded-1"
-                >Make An Enquiry</a
+            <li>
+              <a href="#pricing" class="nav-link" data-bs-dismiss="offcanvas"
+                >Purchase Options</a
               >
+            </li>
+            <li>
+              <a href="#companies" class="nav-link" data-bs-dismiss="offcanvas"
+                >View all Companies</a
+              >
+            </li>
+          </ul>
+
+          <ul class="list-unstyled d-flex flex-column gap-2 mt-2">
+            <li>
+              <button
+                type="button"
+                class="btn fw-semibold rounded-1 btn-primary w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#demoModal"
+                data-bs-dismiss="offcanvas"
+              >
+                Book a Free Demo
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="btn fw-semibold rounded-1 btn-primary w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#companyModal"
+                data-bs-dismiss="offcanvas"
+              >
+                Free Company Example
+              </button>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+
+      <!-- Demo Modal -->
+      <div
+        class="modal fade"
+        id="demoModal"
+        tabindex="-1"
+        aria-labelledby="demoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Start of Meetings Embed Script -->
+            <div
+              class="meetings-iframe-container"
+              data-src="https://meetings-eu1.hubspot.com/wpowell?embed=true"
+            ></div>
+            <script
+              type="text/javascript"
+              src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+            ></script>
+            <!-- End of Meetings Embed Script -->
+          </div>
+        </div>
+      </div>
+      <!-- Company Modal -->
+      <div
+        class="modal fade"
+        id="companyModal"
+        tabindex="-1"
+        aria-labelledby="companyModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="companyModalLabel">
+                Receive a free analysis of a company within the Recruitment
+                Agencies industry
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Please fill out the form below and we will send you an email to
+                get access to the free analysis of a company contained in the
+                industry report:
+              </p>
+              <form>
+                <div class="mb-3">
+                  <label for="first-name" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="first-name"
+                    placeholder="First name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="surname" class="form-label">Surname</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="surname"
+                    placeholder="Surname"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Telephone Number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="telephone"
+                    placeholder="Your contact number"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label"
+                    >Your Email Address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Your Email Address"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="hear-about" class="form-label"
+                    >How did you hear about us?</label
+                  >
+                  <select class="form-select" id="hear-about">
+                    <option selected disabled>Choose an option</option>
+                    <option value="Email">Email</option>
+                    <option value="Mail">Mail</option>
+                    <option value="Other">Other</option>
+                    <option value="Press Coverage">Press Coverage</option>
+                    <option value="Previous Customer">Previous Customer</option>
+                    <option value="Recommendation">Recommendation</option>
+                    <option value="Search Engine">Search Engine</option>
+                    <option value="Social Media">Social Media</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Request Analysis
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!--Header-->
-    <header class="header">
+  </header>
+
       <!--Hero-->
       <div class="hero text-dark pt-7 mb-5">
         <div class="container-xl">

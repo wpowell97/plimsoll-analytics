@@ -2,16 +2,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Select the navigation bar
     const navbar = document.querySelector(".navbar");
-    
+   
     // Select the "scroll to top" button
     const toTopBtn = document.querySelector("#to-top");
-    
+   
     // Select sections with the classes "stats" and "findings"
     const sections = document.querySelectorAll(".stats, .findings");
-  
+ 
     // Create a set to track which sections have been animated
     const animatedSections = new Set();
-  
+ 
     // Function to handle scroll events for navbar and "to top" button visibility
     function userScroll() {
       window.addEventListener("scroll", () => {
@@ -19,44 +19,44 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 50) {
           // Add sticky and scrolled classes to navbar
           navbar.classList.add("navbar-sticky", "scrolled");
-  
+ 
           // Show the "to top" button if it exists
           if (toTopBtn) toTopBtn.classList.add("show");
         } else {
           // Remove sticky and scrolled classes from navbar
           navbar.classList.remove("navbar-sticky", "scrolled");
-  
+ 
           // Hide the "to top" button if it exists
           if (toTopBtn) toTopBtn.classList.remove("show");
         }
       });
     }
-  
+ 
     // Function to smoothly scroll to the top when the button is clicked
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  
+ 
     // Add event listener to "to top" button if it exists
     if (toTopBtn) {
       toTopBtn.addEventListener("click", scrollToTop);
     }
-  
+ 
     // Function to animate number counters within a section
     function incrementStats(section) {
       // Select all elements with class "counter" inside the given section
       const counters = section.querySelectorAll(".counter");
-  
+ 
       counters.forEach((counter) => {
         // Initialize the counter value to 0
         counter.innerText = "0";
-  
+ 
         // Get the target number from data attribute
         const target = +counter.getAttribute("data-target");
-  
+ 
         // Calculate increment step
         const increment = target / 200;
-  
+ 
         // Function to update the counter gradually
         function updateCounter() {
           const c = +counter.innerText;
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCounter();
       });
     }
-  
+ 
     // Create an IntersectionObserver to trigger animations when sections come into view
     const observer = new IntersectionObserver(
       (entries) => {
@@ -85,10 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       { threshold: 0.5 } // Trigger when 50% of the section is visible
     );
-  
+ 
     // Observe each section to detect when it comes into view
     sections.forEach((section) => observer.observe(section));
-  
+ 
     // Select the first <h1> element on the page
     const target = document.querySelector("h1");
     if (target) {
@@ -107,35 +107,35 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       h1Observer.observe(target);
     }
-  
+ 
     // Smooth scrolling for anchor links (e.g., <a href="#section">)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default jump-to behavior
-  
+ 
         // Get the target element's ID from the href attribute
         const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
-  
+ 
         if (targetElement) {
           // Calculate position considering an offset of 100px (for fixed navbar)
           const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
-          
+         
           // Smoothly scroll to the target element
           window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
       });
     });
-  
+ 
     // Initialize scroll event listener for navbar and "to top" button
     userScroll();
   });
-  
+ 
   // Another DOMContentLoaded event listener for a separate animation
   document.addEventListener("DOMContentLoaded", function () {
     // Select the element with class "order-today"
     const target = document.querySelector('.order-today');
-  
+ 
     // Create an IntersectionObserver to detect when "order-today" comes into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (entry.isIntersecting) {
           target.classList.remove('order-today-hidden');
           target.classList.add('animate__slideInRight');
-  
+ 
           // Stop observing once animation is triggered to avoid repeating
           observer.unobserve(entry.target);
         }
@@ -151,40 +151,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }, {
       threshold: 0.5 // Trigger when 50% of the element is visible
     });
-  
+ 
     // Start observing the target element
     observer.observe(target);
   });
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const dropdownItems = document.querySelectorAll('.nav-link');
  
-    dropdownItems.forEach(item => {
-      item.addEventListener('click', function (event) {
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
  
-        if (targetElement) {
-          const offcanvasElement = document.querySelector('.offcanvas');
-          const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
-          bsOffcanvas.hide();
+// ...existing code...
  
-          setTimeout(() => {
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-          }, 300); // Adjust the timeout to match the offcanvas transition duration
-        }
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownItems = document.querySelectorAll('.nav-link');
+ 
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+ 
+      if (targetElement) {
+        const offcanvasElement = document.querySelector('.offcanvas');
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+        bsOffcanvas.hide();
+ 
+        setTimeout(() => {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+ 
+          // Remove the offcanvas backdrop manually
+          const backdrop = document.querySelector('.offcanvas-backdrop');
+          if (backdrop) {
+            backdrop.remove();
+          }
+        }, 300); // Adjust the timeout to match the offcanvas transition duration
+      }
     });
   });
-
+});
+ 
+// ...existing code...
+ 
   document.addEventListener('DOMContentLoaded', function () {
     var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
     var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
       return new bootstrap.Offcanvas(offcanvasEl)
     })
-
+ 
     document.querySelectorAll('.offcanvas a.nav-link').forEach(function (element) {
       element.addEventListener('click', function () {
         offcanvasList.forEach(function (offcanvas) {
@@ -193,3 +203,4 @@ document.addEventListener("DOMContentLoaded", function () {
       })
     })
   })
+ 

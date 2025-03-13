@@ -153,95 +153,95 @@
       </div>
       <!-- Company Modal -->
       <div
-        class="modal fade"
-        id="companyModal"
-        tabindex="-1"
-        aria-labelledby="companyModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="companyModalLabel">
-                Receive a free analysis of a company within the Recruitment
-                Agencies industry
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Please fill out the form below and we will send you an email to
-                get access to the free analysis of a company contained in the
-                industry report:
-              </p>
-              <form>
-                <div class="mb-3">
-                  <label for="first-name" class="form-label">First name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="first-name"
-                    placeholder="First name"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="surname" class="form-label">Surname</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="surname"
-                    placeholder="Surname"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="phone" class="form-label">Telephone Number</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="telephone"
-                    placeholder="Your contact number"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label"
-                    >Your Email Address</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Your Email Address"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="hear-about" class="form-label"
-                    >How did you hear about us?</label
-                  >
-                  <select class="form-select" id="hear-about">
-                    <option selected disabled>Choose an option</option>
-                    <option value="Email">Email</option>
-                    <option value="Mail">Mail</option>
-                    <option value="Other">Other</option>
-                    <option value="Press Coverage">Press Coverage</option>
-                    <option value="Previous Customer">Previous Customer</option>
-                    <option value="Recommendation">Recommendation</option>
-                    <option value="Search Engine">Search Engine</option>
-                    <option value="Social Media">Social Media</option>
-                  </select>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Request Analysis
-                </button>
-              </form>
-            </div>
+      class="modal fade"
+      id="companyModal"
+      tabindex="-1"
+      aria-labelledby="companyModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="companyModal">
+              Receive a free analysis of a company within the Recruitment
+              Agencies industry
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Please fill out the form below and we will send you an email to
+              get access to the free analysis of a company contained in the
+              industry report:
+            </p>
+            <form>
+              <div class="mb-3">
+                <label for="first-name" class="form-label">First name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="first-name"
+                  placeholder="First name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="surname" class="form-label">Surname</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="surname"
+                  placeholder="Surname"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Telephone Number</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="telephone-1"
+                  placeholder="Your contact number"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label"
+                  >Your Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email Address"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="hear-about" class="form-label"
+                  >How did you hear about us?</label
+                >
+                <select class="form-select" id="hear-about">
+                  <option selected disabled>Choose an option</option>
+                  <option value="Email">Email</option>
+                  <option value="Mail">Mail</option>
+                  <option value="Other">Other</option>
+                  <option value="Press Coverage">Press Coverage</option>
+                  <option value="Previous Customer">Previous Customer</option>
+                  <option value="Recommendation">Recommendation</option>
+                  <option value="Search Engine">Search Engine</option>
+                  <option value="Social Media">Social Media</option>
+                </select>
+              </div>
+              <button type="submit" class="btn fw-semibold rounded-1 btn-primary">
+                Request Analysis
+              </button>
+            </form>
           </div>
         </div>
       </div>
+    </div>
 
       <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
       <div class="container">
@@ -783,8 +783,8 @@
       </div>
     </section>
 
-        <!-- Viewing all Companies -->
-        <section id="companies" class="bg-light mb-5 overflow-hidden">
+        <!-- View all Companies -->
+        <section id="companies" class="bg-light mb-4 overflow-hidden text-center">
           <div class="container">
             <div class="row">
               <div class="col-12">
@@ -794,18 +794,112 @@
                   Simply enter your details and we will send you a complete list of the companies 
                   individually analysed and valued in this Plimsoll Analysis:
                 </p>
-                <button
-                type="button"
-                class="btn fw-semibold rounded-1 btn-primary w-50"
-                data-bs-toggle="modal"
-                data-bs-target="#demoModal"
-                data-bs-dismiss="offcanvas"
-              >
-                View All Companies
-              </button>
               </div>
             </div>
           </section>
+          
+          <!-- View all Companies Modal Button -->
+           <div class="container mb-5 overflow-hidden text-center">
+            <button
+            type="button"
+            class="btn fw-semibold rounded-1 btn-primary w-25"
+            data-bs-toggle="modal"
+            data-bs-target="#ViewCompaniesModal"
+            data-bs-dismiss="offcanvas"
+          >
+            View All Companies
+          </button>
+           </div>
+
+          <!-- View all Companies Modal-->
+          <div
+          class="modal fade"
+          id="ViewCompaniesModal"
+          tabindex="-1"
+          aria-labelledby="ViewCompaniesModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ViewCompaniesModal">
+                  View a list of companies in this report
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Please fill out the form below and we will send you an email to
+                  get access to the company list:
+                </p>
+                <form>
+                  <div class="mb-3">
+                    <label for="first-name" class="form-label">First name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="first-name-2"
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="surname-2"
+                      placeholder="Surname"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Telephone Number</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="telephone-2"
+                      placeholder="Your contact number"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label"
+                      >Your Email Address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email-2"
+                      placeholder="Your Email Address"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="hear-about" class="form-label"
+                      >How did you hear about us?</label
+                    >
+                    <select class="form-select" id="hear-about">
+                      <option selected disabled>Choose an option</option>
+                      <option value="Email">Email</option>
+                      <option value="Mail">Mail</option>
+                      <option value="Other">Other</option>
+                      <option value="Press Coverage">Press Coverage</option>
+                      <option value="Previous Customer">Previous Customer</option>
+                      <option value="Recommendation">Recommendation</option>
+                      <option value="Search Engine">Search Engine</option>
+                      <option value="Social Media">Social Media</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn fw-semibold rounded-1 btn-primary">
+                    View Company List
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!--Legal-->
     <section class="legal text-bg-primary py-5 overflow-hidden">
