@@ -60,6 +60,7 @@
       ),
       url("/images/order-header.png") center center no-repeat;
     background-size: cover;
+    overflow-x: hidden; // Prevent horizontal scrolling
   }
 }
 .navbar .btn:hover {
