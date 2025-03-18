@@ -14,23 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
  
     // Function to handle scroll events for navbar and "to top" button visibility
     function userScroll() {
-      window.addEventListener("scroll", () => {
-        // Check if the user has scrolled down more than 50 pixels
-        if (window.scrollY > 50) {
-          // Add sticky and scrolled classes to navbar
-          navbar.classList.add("navbar-sticky", "scrolled");
- 
-          // Show the "to top" button if it exists
-          if (toTopBtn) toTopBtn.classList.add("show");
-        } else {
-          // Remove sticky and scrolled classes from navbar
-          navbar.classList.remove("navbar-sticky", "scrolled");
- 
-          // Hide the "to top" button if it exists
-          if (toTopBtn) toTopBtn.classList.remove("show");
-        }
-      });
+      // Check if the user has scrolled down more than 50 pixels
+      if (window.scrollY > 50) {
+        navbar.classList.add("navbar-sticky", "scrolled");
+        if (toTopBtn) toTopBtn.classList.add("show");
+      } else {
+        navbar.classList.remove("navbar-sticky", "scrolled");
+        if (toTopBtn) toTopBtn.classList.remove("show");
+      }
     }
+    
+    window.addEventListener("scroll", userScroll);
  
     // Function to smoothly scroll to the top when the button is clicked
     function scrollToTop() {
@@ -56,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
  
         // Calculate increment step
         const increment = target / 200;
- 
         // Function to update the counter gradually
         function updateCounter() {
           const c = +counter.innerText;
@@ -169,19 +162,18 @@ document.addEventListener("DOMContentLoaded", function () {
  
       if (targetElement) {
         const offcanvasElement = document.querySelector('.offcanvas');
-        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
         bsOffcanvas.hide();
  
-        setTimeout(() => {
+        offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
           const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
           window.scrollTo({ top: targetPosition, behavior: 'smooth' });
- 
-          // Remove the offcanvas backdrop manually
+        
           const backdrop = document.querySelector('.offcanvas-backdrop');
           if (backdrop) {
             backdrop.remove();
           }
-        }, 300); // Adjust the timeout to match the offcanvas transition duration
+        });
       }
     });
   });

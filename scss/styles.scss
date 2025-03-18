@@ -1,9 +1,9 @@
 .xl-text {
-  font-size: 75px;
+  font-size: 4.5rem;
   color: white;
 }
 .navbar .btn-outline-light:hover {
-  color: var(--bs-dark);
+  --bs-dark: #212529;
 }
 .navbar {
   transition: all 0.5s ease-in-out;
@@ -42,7 +42,7 @@
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("/images/quote-background.webp") center center no-repeat;
+    url("../images/quote-background.webp") center center no-repeat;
   background-size: cover;
 
   .modal {
@@ -58,7 +58,7 @@
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.6)
       ),
-      url("/images/order-header.png") center center no-repeat;
+      url("../images/order-header.png") center center no-repeat;
     background-size: cover;
     overflow-x: hidden; // Prevent horizontal scrolling
   }
@@ -90,13 +90,11 @@
   background-color: #31477e;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-}
-.to-top-btn {
+
   &:hover {
     background-color: #d14247;
   }
-}
-.to-top-btn {
+
   img {
     margin-bottom: 0.25rem;
     width: 18px;
@@ -233,11 +231,9 @@
   .signature {
     margin-top: 20px !important;
   }
-  .analysis {
-    .analysis .image-container {
-      display: flex;
-      justify-content: center;
-    }
+  .analysis .image-container {
+    display: flex;
+    justify-content: center;
   }
   .navbar {
     background: #fff;
