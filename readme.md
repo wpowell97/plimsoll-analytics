@@ -8,8 +8,10 @@ Bootstrap website for showcasing company and industry report data. This website 
 
 - Modern layout with custom colours/styles/backgrounds
 - Responsive design
-- Burger menu with included button modals
+- Left hand side menu for larger screens containing two button modals
+- Burger menu with included button modals (Mobile Only)
 - Jump to top button
+- Sections highlighted when active
 - Analysis Report Data
 - Findings Information
 - Purchase Options

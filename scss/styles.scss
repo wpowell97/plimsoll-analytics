@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 .xl-text {
   font-size: 4.5rem;
   color: white;
@@ -14,8 +18,12 @@
   opacity: 0.9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
+.nav-link.active {
+  font-weight: bold;
+  color: black !important;
+}
 .red-line {
-  width: 100%;
+  width: 99.1%;
   height: auto;
   display: block;
 }
@@ -278,6 +286,9 @@
   .findings-border:after {
     display: none;
   }
+  .red-line {
+    width: 100%;
+  }
 }
 .background-plimsoll {
   background: url("../images/logo-overlay.png") center center no-repeat;
@@ -288,5 +299,83 @@
 @media (max-width: 576px) {
   .background-plimsoll {
     background-image: none;
+  }
+}
+// Sidebar for Large Screens
+.sidebar {
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+  background: #f8f9fa; // Matches Bootstrap light background
+}
+
+// Content Area - Ensuring Full Width
+.content {
+  flex: 1;
+  margin-left: 250px; // No overlap with sidebar
+  width: calc(100vw - 250px); // Fill remaining space
+  max-width: 100%;
+  background: white; // Ensure consistent background
+}
+
+// Bootstrap Container Fix (Remove Margins)
+.container-fluid {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Mobile Menu Button Styling
+.menu-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1050;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+// Hide Menu Button on Large Screens
+@media (min-width: 992px) {
+  .menu-button {
+    display: none;
+  }
+  .content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+  }
+}
+
+// Adjust for Small Screens
+@media (max-width: 991px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+// Hide Menu Button on Medium Screens
+@media (min-width: 1199px) {
+  .menu-button {
+    display: none;
+  }
+  .content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+  }
+}
+
+// Adjust for Medium Screens
+@media (max-width: 1199px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
   }
 }

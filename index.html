@@ -29,34 +29,55 @@
     <title>Staging Plimsoll Website</title>
   </head>
   <body>
-    <!-- Navigation -->
 
-    <!--Header-->
+    <!--Navigation on Extra Large Screens -->
+    <nav class="sidebar d-none d-xl-block bg-light">
+      <div class="p-3">
+        <a href="index.html" class="navbar-brand d-block text-center">
+          <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" class="img-fluid"/>
+        </a>
+        <ul class="list-unstyled mt-4">
+          <li><a href="#report" class="nav-link py-1">Analysis Report</a></li>
+          <li><a href="#findings" class="nav-link py-1">Key Findings</a></li>
+          <li><a href="#order-today" class="nav-link py-1">Order Today</a></li>
+          <li><a href="#pricing" class="nav-link py-1">Purchase Options</a></li>
+          <li><a href="#companies" class="nav-link py-1">View all Companies</a></li>
+          <li class="mt-3">
+            <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100" data-bs-toggle="modal" data-bs-target="#demoModal">
+              Book a Free Demo
+            </button>
+          </li>
+          <li class="mt-2">
+            <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100 px-0" data-bs-toggle="modal" data-bs-target="#companyModal">
+              Free Company Example
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Navigation on Large - Extra Small Screens -->
     <header class="header">
       <div class="container">
-        <div class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-3 navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-3 navbar navbar-expand-lg navbar-light sticky-top d-xl-none">
           <a href="index.html" class="top-logo">
             <img
               src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
               alt="Plimsoll Logo"
             />
           </a>
-          <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
             &#9776; Menu
           </button>
         </div>
       </div>
 
-      <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-      Button with data-bs-target
-    </button> -->
-
-      <!-- Offcanvas Menu -->
-      <div
-        class="offcanvas offcanvas-start"
+    <!-- Offcanvas Menu for Small Screens -->
+    <div
+        class="offcanvas offcanvas-start d-xl-none"
         tabindex="-1"
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel"
+        id="mobileMenu"
+        aria-labelledby="mobileMenuLabel"
       >
         <div class="offcanvas-header">
           <a href="index.html" class="navbar-brand">
@@ -253,6 +274,8 @@
     </header>
 
     <!--Hero-->
+    <main class="content">
+      <div class="container-fluid mt-4">
     <div class="hero text-dark pt-5 mb-5">
       <div class="container-xl">
         <div class="row">
@@ -879,7 +902,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-top border-danger border-2 bg-dark text-white py-4">
+    <footer class="border-top border-danger border-2 bg-dark text-white py-4 px-4">
       <div class="container">
         <div class="row">
           <div class="col-md-8 text-start py-2">
@@ -896,7 +919,8 @@
     <button id="to-top" class="to-top-btn" aria-label="Back to top">
       <img src="images/up-arrow.png" alt="Back to Top" />
     </button>
-
+  </div>
+</main>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js" defer></script>
   </body>

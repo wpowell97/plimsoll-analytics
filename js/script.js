@@ -150,25 +150,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
  
  
-// ...existing code...
- 
+// Wait until the DOM is fully loaded before executing the script
 document.addEventListener("DOMContentLoaded", function () {
+
+  // Select all navigation links inside the offcanvas menu
   const dropdownItems = document.querySelectorAll('.nav-link');
- 
+
+  // Add a click event listener to each navigation link
   dropdownItems.forEach(item => {
     item.addEventListener('click', function (event) {
+
+      // Get the ID of the target section (removing '#' from the href)
       const targetId = this.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
- 
+
+      // If the target section exists on the page
       if (targetElement) {
+
+        // Select the offcanvas menu and create a Bootstrap Offcanvas instance
         const offcanvasElement = document.querySelector('.offcanvas');
         const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
-        bsOffcanvas.hide();
- 
-        offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
-          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
-          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         
+        // Close the offcanvas menu
+        bsOffcanvas.hide();
+
+        // Wait for the offcanvas menu to fully close before scrolling
+        offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
+
+          // Calculate the position of the target element (offset by 100px for spacing)
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
+
+          // Smoothly scroll to the target section
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+          // Remove any lingering offcanvas backdrop (prevents overlay issues)
           const backdrop = document.querySelector('.offcanvas-backdrop');
           if (backdrop) {
             backdrop.remove();
@@ -179,19 +194,66 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
  
-// ...existing code...
- 
-  document.addEventListener('DOMContentLoaded', function () {
-    var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
-    var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
-      return new bootstrap.Offcanvas(offcanvasEl)
-    })
- 
-    document.querySelectorAll('.offcanvas a.nav-link').forEach(function (element) {
-      element.addEventListener('click', function () {
-        offcanvasList.forEach(function (offcanvas) {
-          offcanvas.hide()
-        })
-      })
-    })
-  })
+document.addEventListener('DOMContentLoaded', function () {
+  
+  // Select all offcanvas elements and create Bootstrap Offcanvas instances
+  var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'));
+  var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
+    return new bootstrap.Offcanvas(offcanvasEl);
+  });
+
+  // Attach an event listener to every navigation link inside the offcanvas menu
+  document.querySelectorAll('.offcanvas a.nav-link').forEach(function (element) {
+    element.addEventListener('click', function () {
+
+      // Loop through all offcanvas instances and close them
+      offcanvasList.forEach(function (offcanvas) {
+        offcanvas.hide();
+      });
+    });
+  });
+
+});
+  // Detection of active link to then turn text bold and black
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section"); // Select all sections
+    const navLinks = document.querySelectorAll(".nav-link"); // Select all nav links
+    const firstSection = sections.length > 0 ? sections[0] : null; // Get the first section
+    let lastActiveSection = ""; // Store last active section to persist highlight
+  
+    function changeActiveLink() {
+      let currentSection = lastActiveSection; // Default to the last detected section
+      // Check if the user has scrolled above the first section
+      if (firstSection && window.scrollY < firstSection.offsetTop - 150) {
+        navLinks.forEach((link) => link.classList.remove("active")); // Remove active class
+        lastActiveSection = ""; // Reset last active section
+        return;
+      }
+      // Loop through sections and find which one is currently in view
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 370; // Adjust for better detection
+        const sectionBottom = sectionTop + section.offsetHeight;
+  
+        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+  
+      // Update the active link only if the section has changed
+      if (currentSection !== lastActiveSection) {
+        lastActiveSection = currentSection;
+  
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(currentSection)) {
+            link.classList.add("active");
+          }
+        });
+      }
+    }
+    // Run on scroll event
+    window.addEventListener("scroll", changeActiveLink);
+  
+    // Also run when page loads (e.g., if the user refreshes while scrolled down)
+    changeActiveLink();
+  });
