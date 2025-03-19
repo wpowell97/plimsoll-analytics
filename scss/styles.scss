@@ -23,7 +23,7 @@ html {
   color: black !important;
 }
 .red-line {
-  width: 99.1%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -249,12 +249,6 @@ html {
     opacity: 0.9;
     .btn-outline-secondary {
       margin-top: 20px;
-    }
-
-    .navbar .btn:hover {
-      background-color: #d14247 !important;
-      border-color: #d14247;
-      color: white !important;
     }
   }
   .get-started .btn:hover {

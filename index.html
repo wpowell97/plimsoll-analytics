@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no">
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
@@ -14,288 +13,49 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="/images/logo-fav.png" />
-    <title>Staging Plimsoll Website</title>
+    <title>Plimsoll Report</title>
   </head>
   <body>
-
-    <!--Navigation on Extra Large Screens -->
-    <nav class="sidebar d-none d-xl-block bg-light">
-      <div class="p-3">
-        <a href="index.html" class="navbar-brand d-block text-center">
-          <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" class="img-fluid"/>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-dark">
+      <div class="p-3 ps-4">
+        <a href="index.html" class="navbar-brand">
+          <img
+            src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
+            alt="Plimsoll Logo"
+          />
         </a>
-        <ul class="list-unstyled mt-4">
-          <li><a href="#report" class="nav-link py-1">Analysis Report</a></li>
-          <li><a href="#findings" class="nav-link py-1">Key Findings</a></li>
-          <li><a href="#order-today" class="nav-link py-1">Order Today</a></li>
-          <li><a href="#pricing" class="nav-link py-1">Purchase Options</a></li>
-          <li><a href="#companies" class="nav-link py-1">View all Companies</a></li>
-          <li class="mt-3">
-            <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100" data-bs-toggle="modal" data-bs-target="#demoModal">
-              Book a Free Demo
-            </button>
-          </li>
-          <li class="mt-2">
-            <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100 px-0" data-bs-toggle="modal" data-bs-target="#companyModal">
-              Free Company Example
-            </button>
-          </li>
-        </ul>
       </div>
     </nav>
 
-    <!--Navigation on Large - Extra Small Screens -->
+    <!--Header-->
     <header class="header">
-      <div class="container">
-        <div class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-3 navbar navbar-expand-lg navbar-light sticky-top d-xl-none">
-          <a href="index.html" class="top-logo">
-            <img
-              src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
-              alt="Plimsoll Logo"
-            />
-          </a>
-          <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-            &#9776; Menu
-          </button>
-        </div>
-      </div>
-
-    <!-- Offcanvas Menu for Small Screens -->
-    <div
-        class="offcanvas offcanvas-start d-xl-none"
-        tabindex="-1"
-        id="mobileMenu"
-        aria-labelledby="mobileMenuLabel"
-      >
-        <div class="offcanvas-header">
-          <a href="index.html" class="navbar-brand">
-            <img
-              src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg"
-              alt="Plimsoll Logo"
-            />
-          </a>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-
-        <div class="offcanvas-body d-flex flex-column">
-          <ul class="list-unstyled d-flex flex-column gap-2">
-            <li>
-              <a href="#report" class="nav-link" data-bs-dismiss="offcanvas"
-                >Analysis Report</a
+      <!--Hero-->
+      <div class="hero text-dark pt-7 mb-5">
+        <div class="container-xl">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center"
               >
-            </li>
-            <li>
-              <a href="#findings" class="nav-link" data-bs-dismiss="offcanvas"
-                >Key Findings</a
-              >
-            </li>
-            <li>
-              <a
-                href="#order-today"
-                class="nav-link"
-                data-bs-dismiss="offcanvas"
-                >Order Today</a
-              >
-            </li>
-            <li>
-              <a href="#pricing" class="nav-link" data-bs-dismiss="offcanvas"
-                >Purchase Options</a
-              >
-            </li>
-            <li>
-              <a href="#companies" class="nav-link" data-bs-dismiss="offcanvas"
-                >View all Companies</a
-              >
-            </li>
-          </ul>
-
-          <ul class="list-unstyled d-flex flex-column gap-2 mt-2">
-            <li>
-              <button
-                type="button"
-                class="btn fw-semibold rounded-1 btn-primary w-100"
-                data-bs-toggle="modal"
-                data-bs-target="#demoModal"
-                data-bs-dismiss="offcanvas"
-              >
-                Book a Free Demo
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="btn fw-semibold rounded-1 btn-primary w-100"
-                data-bs-toggle="modal"
-                data-bs-target="#companyModal"
-                data-bs-dismiss="offcanvas"
-              >
-                Free Company Example
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Demo Modal -->
-      <div
-        class="modal fade"
-        id="demoModal"
-        tabindex="-1"
-        aria-labelledby="demoModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <!-- Start of Meetings Embed Script -->
-            <div
-              class="meetings-iframe-container"
-              data-src="https://meetings-eu1.hubspot.com/wpowell?embed=true"
-            ></div>
-            <script
-              type="text/javascript"
-              src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-            ></script>
-            <!-- End of Meetings Embed Script -->
+                <h1 class="display-1 fw-bold">Welcome {{Your Company}}</h1>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Company Modal -->
-      <div
-      class="modal fade"
-      id="companyModal"
-      tabindex="-1"
-      aria-labelledby="companyModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-3">
-          <div class="modal-header">
-            <h5 class="modal-title" id="companyModalLabel">
-              Receive a free analysis of a company within the Recruitment
-              Agencies industry
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>
-              Please fill out the form below and we will send you an email to
-              get access to the free analysis of a company contained in the
-              industry report:
-            </p>
-            <form>
-              <div class="mb-3">
-                <label for="first-name-1" class="form-label">First name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="first-name-1"
-                  placeholder="First name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="surname-1" class="form-label">Surname</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="surname-1"
-                  placeholder="Surname"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">Telephone Number</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telephone-1"
-                  placeholder="Your contact number"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label"
-                  >Your Email Address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Your Email Address"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="hear-about" class="form-label"
-                  >How did you hear about us?</label
-                >
-                <select class="form-select" id="hear-about">
-                  <option selected disabled>Choose an option</option>
-                  <option value="Email">Email</option>
-                  <option value="Mail">Mail</option>
-                  <option value="Other">Other</option>
-                  <option value="Press Coverage">Press Coverage</option>
-                  <option value="Previous Customer">Previous Customer</option>
-                  <option value="Recommendation">Recommendation</option>
-                  <option value="Search Engine">Search Engine</option>
-                  <option value="Social Media">Social Media</option>
-                </select>
-              </div>
-              <button type="submit" class="btn fw-semibold rounded-1 btn-primary">
-                Request Analysis
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    </header>
-
-    <!--Hero-->
-    <main class="content">
-      <div class="container-fluid mt-4">
-    <div class="hero text-dark pt-5 mb-5">
-      <div class="container-xl">
-        <div class="row">
           <div class="col-md-12">
             <div
               class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center"
             >
-              <h1 class="display-1 fw-bold">Welcome {{Your Company}}</h1>
+              <h1 class="display-1 fw-bold">Above the Line</h1>
             </div>
           </div>
         </div>
-        <div class="col-md-12">
-          <div
-            class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5 text-center"
-          >
-            <h1 class="display-1 fw-bold">Above the Line</h1>
-          </div>
-        </div>
       </div>
-    </div>
+    </header>
 
     <!-- Red Line -->
     <div class="p-0">
@@ -319,10 +79,16 @@
                 class="get-started text-container flex-column justify-content-center text-center"
               >
                 <a
-                  href="#report"
+                  href="market-analysis.html"
                   class="btn btn-outline-light fw-semibold fs-5 px-4 mx-4 mt-4 rounded-1 get-started"
                 >
-                  Let's Get Started
+                  Let's Get Started #1
+                </a>
+                <a
+                  href="market-analysis-2.html"
+                  class="btn btn-outline-light fw-semibold fs-5 px-4 mx-4 mt-4 rounded-1 get-started"
+                >
+                  Let's Get Started #2
                 </a>
               </div>
             </div>
@@ -331,578 +97,10 @@
       </div>
     </div>
 
-    <!-- Report -->
-    <section id="report" class="report bg-dark pt-1 overflow-hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="p-3">
-              <p class="p-dear">Dear Jason</p>
-              <h4>
-                The 2025 Plimsoll Analysis Report has revealed a significant
-                shift in the Recruitment Agencies landscape, with 416 of the
-                UK’s top companies identified under a Danger rating.
-              </h4>
-              <p>
-                This comprehensive analysis, built on the most up-to-date data,
-                provided a clear financial health check and valuation for the
-                2400 leading firms in the UK Recruitment Agencies sector.
-              </p>
-              <p>
-                History tells us the impact of these ratings: 9 out of 10
-                companies that ultimately failed were previously marked as
-                "Danger" in our reports. With market uncertainty reaching
-                unprecedented levels in 2025, this update is not just timely -
-                its essential.
-              </p>
-              <p>
-                Below, we've highlighted the latest ratings included in this
-                critical edition of the Plimsoll Report:
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats bg-dark overflow-hidden">
-      <div class="container">
-        <div class="row mb-5 mx-sm-0 mx-4 justify-content-center">
-          <div
-            class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-dark border border-2 border-info"
-          >
-            <p class="stat-title">No of companies rated</p>
-            <h2
-              class="counter xl-text text-info border-2"
-              data-target="1284"
-            ></h2>
-            <p class="stat-value">strong</p>
-          </div>
-          <div
-            class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-dark border border-2 border-info"
-          >
-            <p class="stat-title">No of companies rated</p>
-            <h2 class="counter xl-text text-info" data-target="183"></h2>
-            <p class="stat-value">good</p>
-          </div>
-          <div
-            class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-dark border border-2 border-info"
-          >
-            <p class="stat-title">No of companies rated</p>
-            <h2 class="counter xl-text text-info" data-target="243"></h2>
-            <p class="stat-value">mediocre</p>
-          </div>
-          <div
-            class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-dark border border-2 border-info"
-          >
-            <p class="stat-title">No of companies rated</p>
-            <h2 class="counter xl-text text-info" data-target="274"></h2>
-            <p class="stat-value">caution</p>
-          </div>
-          <div
-            class="col-lg-2 col-md-3 col-sm-6 text-center stat-column bg-dark border border-2 border-info"
-          >
-            <p class="stat-title">No of companies rated</p>
-            <h2 class="counter xl-text text-info" data-target="416"></h2>
-            <p class="stat-value">danger</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Findings -->
-    <section id="findings" class="findings bg-light py-5 overflow-hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p>
-              As a prominent company in the UK Recruitment Agency industry, Tbs
-              Labours Ltd has been carefully analysed and rated in the latest
-              Plimsoll Report. The comprehensive comparative analysis,
-              encompassing every key player in the market, offers valuable
-              insights including a detailed financial health check, valuation,
-              M&A rating, and future outlook. With this information at your
-              fingertips, you'll be empowered to:
-            </p>
-            <h3 class="mt-3">Key Findings For Tbs Labour Ltd</h3>
-          </div>
-        </div>
-
-        <!-- Findings Row 1 -->
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card bg-transparent border-0 text-center text-md-start">
-              <div class="card-body">
-                <p class="card-title">See how you compare:</p>
-                <p><strong>You are one of only</strong></p>
-                <div
-                  class="d-flex flex-column flex-md-row align-items-center align-items-md-start"
-                >
-                  <h2 class="counter xl-text" data-target="1284"></h2>
-                  <div class="card-body-2 ms-md-4 mt-2 mt-md-0">
-                    <strong
-                      >Recruitment Agencies to have been rated as
-                      STRONG.</strong
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card bg-transparent border-0 text-center text-md-start">
-              <div class="card-body">
-                <p class="card-title">See who is most likely to fail:</p>
-                <!-- Responsive Flexbox for Number and Text Box -->
-                <div
-                  class="d-flex flex-column flex-md-row align-items-center text-center text-md-start"
-                >
-                  <h2
-                    class="counter xl-text mb-2 mb-md-0 me-md-3"
-                    data-target="416"
-                  ></h2>
-                  <div class="card-body-2">
-                    <strong
-                      >This is an early warning sign that these companies must
-                      improve, or they will fail.</strong
-                    >
-                  </div>
-                </div>
-                <p class="mt-2">
-                  <strong
-                    >of your competitors have been rated as Danger.</strong
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Closing .row.g-4 -->
-
-        <!-- Findings Row 2 -->
-        <div class="row separator border-top border-2 mt-4 pt-4">
-          <div class="col-md-6 text-center text-md-start">
-            <p>Monitor all your rivals:</p>
-            <div class="card-body-2">
-              <strong
-                >The report will alert you to the performance of your key rivals
-                including:</strong
-              >
-            </div>
-            <div class="row text-center mt-4">
-              <div class="col-md-4 border-1 findings-border sm-border-none">
-                <h2 class="counter xl-text" data-target="266"></h2>
-                <p><strong>high growth companies</strong></p>
-              </div>
-              <div class="col-md-4 border-1 findings-border sm-border-none">
-                <h2 class="counter xl-text" data-target="618"></h2>
-                <p><strong>companies with too much debt</strong></p>
-              </div>
-              <div class="col-md-4">
-                <h2 class="counter xl-text" data-target="1046"></h2>
-                <p><strong>companies in decline</strong></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 text-center text-md-start">
-            <p class="card-title">Pick out M&A opportunities:</p>
-            <div class="card bg-transparent border-0 text-center text-md-start">
-              <div class="card-body">
-                <div
-                  class="d-flex flex-column flex-md-row align-items-center align-items-md-start"
-                >
-                  <h2 class="counter xl-text" data-target="360"></h2>
-                  <div class="ms-md-4 mt-2 mt-md-0">
-                    <strong
-                      >companies are ripe for takeover and have been named as
-                      "Highly Attractive".</strong
-                    >
-                  </div>
-                </div>
-                <p class="mt-2 card-body-2">
-                  <strong
-                    >These companies have a big differential between current and
-                    future value.</strong
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Existence Quote -->
-    <section id="order-today" class="quote-bg bg-light w-100">
-      <div class="container-fluid px-0">
-        <div class="col-12">
-          <div class="quote-bg text-center py-6 rounded-0">
-            <div class="container">
-              <div class="row">
-                <h3 class="display-6 fw-bold text-white">
-                  Plimsoll exists to provide quick insights to business leaders
-                  that help prevent failure and plan for success.
-                </h3>
-              </div>
-              <div class="row mt-3">
-                <div class="col">
-                  <h3
-                    class="text-white order-today order-today-hidden animate__animated"
-                  >
-                    ORDER TODAY
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bonus & Place Order -->
-    <section id="bonus-order" class="report bg-dark py-3 overflow-hidden">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-8 col-12">
-            <div class="p-3 text-center text-md-start">
-              <h3>To unlock an<strong> exclusive bonus.</strong></h3>
-              <p>
-                Order the Plimsoll Analysis today and also get a
-                <strong>FREE Health Check Report</strong> on
-                <strong>Tbs Labour Ltd - worth £199</strong>
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-md-4 col-12 border border-light p-3 text-center text-white pricing-box"
-          >
-            <p>All this for just</p>
-            <h2 class="text-light">£399</h2>
-            <strong>(+VAT)</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- To Place your Order -->
-    <section id="place-order" class="report py-3 overflow-hidden placing-order">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="p-3">
-              <p class="p-dear-2 bg-dark">TO PLACE YOUR ORDER</p>
-              <p>
-                Simply email: <strong>s.ogden@plimsoll.co.uk</strong> or call
-                <strong>01642 626400</strong> to confirm your billing address
-                and an email for invoicing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Summary-->
-    <section class="mt-5 mb-2 position-relative background-plimsoll">
-      <div class="container">
-        <div class="row">
-          <!-- Text Column -->
-          <div class="col-lg-12">
-            <div
-              class="text-container d-flex flex-column justify-content-center h-100"
-            >
-              <h5>
-                We understand how challenging it can be to extract actionable
-                insights from complex financial data. That's why we've designed
-                a user-friendly, graphical analysis of the UK's leading
-                Recruitment Agencies, all packed into a fully interactive
-                report. With this powerful tool, you'll quickly identify the
-                best opportunities and position your business to outpace the
-                competition in 2025.
-              </h5>
-              <p>
-                <strong>
-                  When you purchase the Plimsoll Report - UK Recruitment
-                  Agencies, you'll receive:
-                </strong>
-              </p>
-              <ul class="list-group list-group-flush lh-lg">
-                <li class="list-group-item d-flex align-items-center">
-                  <i class="fas fa-square text-primary"></i>
-                  <span class="ms-2">
-                    The <strong>2025 edition</strong> of the Plimsoll Report in
-                    PDF format.
-                  </span>
-                </li>
-                <li class="list-group-item d-flex align-items-center">
-                  <i class="fas fa-square text-primary"></i>
-                  <span class="ms-2">
-                    <strong>Weekly updates</strong> for the next six months to
-                    track key market movements.
-                  </span>
-                </li>
-                <li class="list-group-item d-flex align-items-center">
-                  <i class="fas fa-square text-primary"></i>
-                  <span class="ms-2">
-                    A <strong>refreshed edition</strong> in six months' time.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container position-relative z-3">
-        <div class="row">
-          <div class="col-lg-12 pt-2">
-            <div
-              class="d-flex.flex-column.justify-content-center text-center text-md-start"
-            >
-              <p>
-                We look forward to helping you unlock your full potential in
-                2025.
-              </p>
-              <p>Yours sincerely,</p>
-              <img src="images/signature.png" alt="Signature of Samantha Ogden" class="img-fluid mb-2" width="150" />
-              <p><strong>Samantha Ogden</strong></p>
-              <p>Senior Analyst</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Purchasing Options -->
-    <section
-      id="pricing"
-      class="pricing mt-2 mb-5 report bg-dark pt-3 pb-6 overflow-hidden"
-    >
-      <div class="">
-        <div class="row mb-3">
-          <div
-            class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center"
-          >
-            <h1 class="fw-bold text-light my-5">Purchasing Options</h1>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <!-- Pricing Col 1 -->
-          <div class="col-md-3 mb-4 mb-md-0 px-lg-4">
-            <div class="card mx-4 mx-md-0 bg-light text-center rounded-4">
-              <div class="card-body">
-                <h4 class="text-primary mt-4">Recruitment Agencies</h4>
-                <h5 class="card-title text-primary fw-bold mb-2">6 Months</h5>
-                <p class="text-primary">Online Industry Analysis</p>
-                <div class="d-flex justify-content-center align-items-center">
-                  <h4 class="card-title text-danger fw-bold mb-0">£399</h4>
-                  <p class="text-primary ms-1 mb-0">+VAT</p>
-                </div>
-                <a
-                  href="#basket"
-                  class="btn btn-success text-white my-4 rounded-1"
-                  >Add to Basket</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Pricing Col 2 -->
-          <div class="col-md-3 mb-4 mb-md-0 px-lg-4">
-            <div class="card mx-4 mx-md-0 bg-light text-center rounded-4">
-              <div class="card-body">
-                <h4 class="text-primary mt-4">Recruitment Agencies</h4>
-                <h5 class="card-title text-primary fw-bold mb-2">1 Year</h5>
-                <p class="text-primary">Online Industry Analysis</p>
-                <div class="d-flex justify-content-center align-items-center">
-                  <h4 class="card-title text-danger fw-bold mb-0">£649</h4>
-                  <p class="text-primary ms-1 mb-0">+VAT</p>
-                </div>
-                <a
-                  href="#basket"
-                  class="btn btn-success text-white my-4 rounded-1"
-                  >Add to Basket</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Benefits Col 3 -->
-          <div class="col-md-3 mb-4 mb-md-0 px-lg-4">
-            <div class="card mx-4 mx-md-0 bg-secondary text-center rounded-4">
-              <div class="card-body">
-                <h4 class="text-light mt-4">Subscription Benefits</h4>
-                <ul class="list-unstyled text-start">
-                  <li class="d-flex align-items-center text-light">
-                    <i class="bi bi-check text-success me-2 fs-4"></i> Access to
-                    every company within this industry
-                  </li>
-                  <li class="d-flex align-items-center text-light">
-                    <i class="bi bi-check text-success me-2 fs-4"></i> Unique
-                    overview of market trends with the latest information
-                    available
-                  </li>
-                  <li class="d-flex align-items-center text-light">
-                    <i class="bi bi-check text-success me-2 fs-4"></i> Stay
-                    alerted to changes happening in real time
-                  </li>
-                  <li class="d-flex align-items-center text-light">
-                    <i class="bi bi-check text-success me-2 fs-4"></i> Free PDF
-                    analyses included
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-        <!-- View all Companies -->
-        <section id="companies" class="mb-4 overflow-hidden text-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h3>Which companies are included in this report?</h3>
-                <p>
-                  Want to know which companies have been included in the Plimsoll Analysis?<br>
-                  Simply enter your details and we will send you a complete list of the companies 
-                  individually analysed and valued in this Plimsoll Analysis:
-                </p>
-              </div>
-            </div>
-          </section>
-          
-          <!-- View all Companies Modal Button -->
-           <div class="container mb-5 overflow-hidden text-center">
-            <button
-            type="button"
-            class="btn fw-semibold rounded-1 btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#ViewCompaniesModal"
-            data-bs-dismiss="offcanvas"
-          >
-            View All Companies
-          </button>
-           </div>
-
-          <!-- View all Companies Modal-->
-          <div
-          class="modal fade"
-          id="ViewCompaniesModal"
-          tabindex="-1"
-          aria-labelledby="ViewCompaniesModal"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-3">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ViewCompaniesModal">
-                  View a list of companies in this report
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p>
-                  Please fill out the form below and we will send you an email to
-                  get access to the company list:
-                </p>
-                <form>
-                  <div class="mb-3">
-                    <label for="first-name-2" class="form-label">First name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="first-name-2"
-                      placeholder="First name"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="surname-2" class="form-label">Surname</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="surname-2"
-                      placeholder="Surname"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="phone" class="form-label">Telephone Number</label>
-                    <input
-                      type="tel"
-                      class="form-control"
-                      id="telephone-2"
-                      placeholder="Your contact number"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label"
-                      >Your Email Address</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email-2"
-                      placeholder="Your Email Address"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="hear-about" class="form-label"
-                      >How did you hear about us?</label
-                    >
-                    <select class="form-select" id="hear-about">
-                      <option selected disabled>Choose an option</option>
-                      <option value="Email">Email</option>
-                      <option value="Mail">Mail</option>
-                      <option value="Other">Other</option>
-                      <option value="Press Coverage">Press Coverage</option>
-                      <option value="Previous Customer">Previous Customer</option>
-                      <option value="Recommendation">Recommendation</option>
-                      <option value="Search Engine">Search Engine</option>
-                      <option value="Social Media">Social Media</option>
-                    </select>
-                  </div>
-                  <button type="submit" class="btn fw-semibold rounded-1 btn-primary">
-                    View Company List
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-    <!--Legal-->
-    <section class="legal text-bg-primary py-5 overflow-hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center fs-4">
-            <p>
-              Plimsoll Publishing Ltd, Scotswood House, Teesdale South, Stockton
-              on Tees, TS17 6SB United Kingdom
-            </p>
-            <p>
-              Tel: +(0)1642 626400 | Fax +44(01642 626410) | email:
-              s.ogden@plimsoll.co.uk | <strong>www.plimsoll.co.uk</strong>
-            </p>
-            <p>
-              Registered in England & Wales No: 2102017 VAT Registration: GB
-              441571072
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="border-top border-danger border-2 bg-dark text-white py-4 px-4">
+    <footer
+      class="border-top border-danger border-2 bg-dark text-white py-4 px-4"
+    >
       <div class="container">
         <div class="row">
           <div class="col-md-8 text-start py-2">
@@ -915,13 +113,8 @@
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="to-top" class="to-top-btn" aria-label="Back to top">
-      <img src="images/up-arrow.png" alt="Back to Top" />
-    </button>
-  </div>
-</main>
+    <!-- End of page -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
