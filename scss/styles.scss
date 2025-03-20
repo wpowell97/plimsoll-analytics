@@ -1,7 +1,18 @@
 html {
   overflow-x: hidden;
 }
-
+.demo-button:hover {
+  background-color: white !important;
+  border-color: #2c4685 !important;
+  color: #2c4685 !important;
+}
+.menu-lighter {
+  background-color: #d7d8da;
+  height: 32.4%;
+}
+      .overLay {
+        background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
+      }
 .xl-text {
   font-size: 4.5rem;
   color: white;
