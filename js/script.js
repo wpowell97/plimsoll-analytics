@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       // Loop through sections and find which one is currently in view
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 300; // Adjust for better detection
+        const sectionTop = section.offsetTop - 200; // Adjust for better detection
         const sectionBottom = sectionTop + section.offsetHeight + 200; // added buffer
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {

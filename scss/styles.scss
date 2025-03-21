@@ -13,18 +13,6 @@ html {
 .overLay {
   background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
 }
-.custom-border {
-  position: relative;
-}
-.custom-border::after {
-  content: '';
-  display: block;
-  width: 30%; /* Adjust the width as needed */
-  height: 4px; /* Adjust the height as needed */
-  background-color: #dc3545; /* Bootstrap danger color */
-  margin: 0 auto;
-  margin-top: 10px; /* Adjust the margin as needed */
-}
 #overview {
   .shadow-sm {
     transition: box-shadow 0.3s ease;
