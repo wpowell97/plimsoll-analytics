@@ -25,6 +25,25 @@ html {
   margin: 0 auto;
   margin-top: 10px; /* Adjust the margin as needed */
 }
+#overview {
+  .shadow-sm {
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  h5 {
+    color: #2c4685;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  background-color: #f9f9f9; // matches the subtle gray on site
+}
 .xl-text {
   font-size: 4.5rem;
   color: white;
