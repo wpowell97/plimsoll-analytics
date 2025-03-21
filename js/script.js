@@ -231,21 +231,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       // Loop through sections and find which one is currently in view
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 370; // Adjust for better detection
-        const sectionBottom = sectionTop + section.offsetHeight;
-  
+        const sectionTop = section.offsetTop - 300; // Adjust for better detection
+        const sectionBottom = sectionTop + section.offsetHeight + 200; // added buffer
+
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
           currentSection = section.getAttribute("id");
         }
       });
-  
+
       // Update the active link only if the section has changed
       if (currentSection !== lastActiveSection) {
         lastActiveSection = currentSection;
-  
+
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href").includes(currentSection)) {
+          const href = link.getAttribute("href");
+          if (href && href.includes(currentSection)) {
             link.classList.add("active");
           }
         });

@@ -16,7 +16,6 @@ html {
 .custom-border {
   position: relative;
 }
-
 .custom-border::after {
   content: '';
   display: block;
@@ -243,6 +242,13 @@ html {
     justify-content: center;
   }
   .hero .text-container {
+    text-align: center;
+  }
+  .site-top .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .site-top .text-container {
     text-align: center;
   }
   .xl-text {
