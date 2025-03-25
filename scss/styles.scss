@@ -1,5 +1,6 @@
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .demo-button:hover {
   background-color: white !important;
@@ -55,6 +56,10 @@ html {
 #reports-nav .tab-content {
   color: #212529 !important;
   background-color: #ffffff !important;
+}
+#sideNav .nav-link.active {
+  font-weight: bold;
+  color: #000; /* optional */
 }
 .xl-text {
   font-size: 4.5rem;

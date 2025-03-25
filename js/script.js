@@ -327,3 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+  const scrollSpy = new bootstrap.ScrollSpy(document.getElementById('scrollspyContainer'), {
+    target: '#sideNav',
+    offset: 100
+  });

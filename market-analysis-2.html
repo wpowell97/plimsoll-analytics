@@ -20,53 +20,59 @@
 
 <body>
 
-  <!--Navigation on Extra Large Screens -->
-  <nav class="sidebar d-none d-xl-block bg-light z-3">
-    <div class="p-4">
-      <a href="index.html" class="navbar-brand text-center">
-        <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" class="img-fluid" />
-      </a>
-      <div class="mt-4">
-        <ul class="list-unstyled">
-          <li><a class="nav-link pb-1 fw-semibold">INTRODUCTION:</a></li>
-          <li><a href="#overview" class="nav-link pb-1 border-bottom">Overview</a></li>
-        </ul>
-      </div>
-      <ul class="list-unstyled mt-2">
-        <li><a class="nav-link py-1 fw-semibold">REPORTS YOU FEATURE IN:</a></li>
-        <li><a href="?tab=Bakery#reports-nav" class="nav-link py-1 border-bottom">Bakery</a></li>
-        <li><a href="?tab=FoodManufacturing#reports-nav" class="nav-link py-1 border-bottom">Food Manufacturing</a></li>
-        <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a></li>
-        <li><a href="?tab=PieManufacturers#reports-nav" class="nav-link py-1 border-bottom">Pie Manufacturers</a></li>
-        <li><a href="?tab=SandwichProducers#reports-nav" class="nav-link py-1 border-bottom">Sandwich Producers</a></li>
-        <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food Manufacturers</a>
-        </li>
-      </ul>
-      <ul class="list-unstyled mt-2">
-        <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
-        <li><a href="#what-we-offer" class="nav-link py-1 border-bottom">What We Offer</a></li>
-        <li><a href="#lets-get-started" class="nav-link py-1 border-bottom">Let's Get Started</a></li>
-      </ul>
-    </div>
-    <div class="p-4 d-none d-xl-block menu-lighter">
-      <ul class="list-unstyled">
-        <li><a href="#pricing" class="nav-link py-1 border-bottom">Purchase Options</a></li>
-        <li><a href="#faqs" class="nav-link py-1 border-bottom">FAQ's</a></li>
-        <li class="mt-3">
-          <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100 demo-button" data-bs-toggle="modal"
-            data-bs-target="#demoModal">
-            Book a Free Demo
-          </button>
-        </li>
-        <li class="mt-2">
-          <button type="button" class="btn fw-semibold rounded-1 btn-outline-primary w-100 px-0" data-bs-toggle="modal"
-            data-bs-target="#companyModal">
-            Free Company Example
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container-xl my-5">
+    <div class="row">
+<!-- Sidebar wrapper -->
+<div class="col-xl-3 d-none d-xl-block">
+  <div class="bg-white shadow-sm rounded-3 p-4 position-sticky top-100" id="sideNav">
+    
+    <!-- Logo -->
+    <a href="index.html" class="navbar-brand text-center d-block mb-4">
+      <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" class="img-fluid" />
+    </a>
+
+    <!-- INTRODUCTION -->
+    <ul class="list-unstyled">
+      <li><a class="nav-link pb-1 fw-semibold">INTRODUCTION:</a></li>
+      <li><a href="#overview" class="nav-link pb-1 border-bottom">Overview</a></li>
+    </ul>
+
+    <!-- REPORTS YOU FEATURE IN -->
+    <ul class="list-unstyled mt-2">
+      <li><a class="nav-link py-1 fw-semibold">REPORTS YOU FEATURE IN:</a></li>
+      <li><a href="?tab=Bakery#reports-nav" class="nav-link py-1 border-bottom">Bakery</a></li>
+      <li><a href="?tab=FoodManufacturing#reports-nav" class="nav-link py-1 border-bottom">Food Manufacturing</a></li>
+      <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a></li>
+      <li><a href="?tab=PieManufacturers#reports-nav" class="nav-link py-1 border-bottom">Pie Manufacturers</a></li>
+      <li><a href="?tab=SandwichProducers#reports-nav" class="nav-link py-1 border-bottom">Sandwich Producers</a></li>
+      <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food Manufacturers</a></li>
+    </ul>
+
+    <!-- SERVICES -->
+    <ul class="list-unstyled mt-2">
+      <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
+      <li><a href="#what-we-offer" class="nav-link py-1 border-bottom">What We Offer</a></li>
+      <li><a href="#lets-get-started" class="nav-link py-1 border-bottom">Let's Get Started</a></li>
+    </ul>
+
+    <!-- EXTRAS -->
+    <ul class="list-unstyled mt-4 menu-lighter">
+      <li><a href="#pricing" class="nav-link py-1 border-bottom">Purchase Options</a></li>
+      <li><a href="#faqs" class="nav-link py-1 border-bottom">FAQ's</a></li>
+      <li class="mt-3">
+        <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100 demo-button" data-bs-toggle="modal" data-bs-target="#demoModal">
+          Book a Free Demo
+        </button>
+      </li>
+      <li class="mt-2">
+        <button type="button" class="btn fw-semibold rounded-1 btn-outline-primary w-100 px-0" data-bs-toggle="modal" data-bs-target="#companyModal">
+          Free Company Example
+        </button>
+      </li>
+    </ul>
+
+  </div>
+</div>
 
   <!--Navigation on Large - Extra Small Screens -->
   <header class="header">
@@ -240,9 +246,12 @@
           </div>
         </div>
       </section>
+    <!-- Main Content -->
+      <div class="col-xl-9" id="scrollspyContainer" id="scrollspyContainer" data-bs-spy="scroll" data-bs-target="#sideNav"
+        data-bs-offset="100" tabindex="0">
 
       <!-- Industry Overview -->
-      <section id="overview" class="site-top text-dark py-lg-5 py-sm-3 bg-light">
+      <section id="overview" class="mb-5 site-top text-dark py-lg-5 py-sm-3 bg-light">
         <div class="container-xl">
           <div class="row justify-content-center mb-4">
             <div class="col-lg-10 text-center">
@@ -309,7 +318,7 @@
       </section>
 
       <!-- Report You Feature In Title  -->
-      <section id="reports-featured" class="mt-lg-2 mb-lg-1 report overflow-hidden">
+      <section id="reports-featured" class="mb-5 mt-lg-2 mb-lg-1 report overflow-hidden">
         <div class="container">
           <div class="row mb-lg-2">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
@@ -320,7 +329,7 @@
       </section>
 
       <!-- Reports You Feature In Nav Area  -->
-      <section id="reports-nav" class="report py-lg-5 overflow-hidden">
+      <section id="reports-nav" class="mb-5 report py-lg-5 overflow-hidden">
         <div class="container">
           <div class="card shadow rounded-4 border-0">
             <div class="card-header bg-white border-bottom-0">
@@ -668,7 +677,7 @@
 
       <!-- What We Offer - Title -->
 
-      <section id="what-we-offer" class="mt-lg-2 mb-lg-1 report overflow-hidden">
+      <section id="what-we-offer" class="mb-5 mt-lg-2 mb-lg-1 report overflow-hidden">
         <div class="container">
           <div class="row mb-lg-2">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
@@ -944,7 +953,7 @@
       </section>
 
       <!-- Purchasing Options -->
-      <section id="pricing" class="pricing mb-5 report bg-dark pt-3 pb-6 overflow-hidden">
+      <section id="pricing" class="mb-5 pricing mb-5 report bg-dark pt-3 pb-6 overflow-hidden">
         <div class="">
           <div class="row mb-3">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
@@ -1266,6 +1275,9 @@
             </div>
           </div>
       </section>
+    </div>
+  </div>
+</div>
 
       <!--Legal-->
       <section class="legal text-bg-primary py-5 overflow-hidden">
