@@ -57,6 +57,15 @@ html {
   color: #212529 !important;
   background-color: #ffffff !important;
 }
+#sideNav {
+  top: 5rem; // spacing from the top
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+}
+
+.main-content {
+  padding-left: 2rem; // spacing between sidebar and content
+}
 #sideNav .nav-link.active {
   font-weight: bold;
   color: #000; /* optional */
