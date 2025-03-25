@@ -216,45 +216,114 @@ document.addEventListener('DOMContentLoaded', function () {
 });
   // Detection of active link to then turn text bold and black
   document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section"); // Select all sections
-    const navLinks = document.querySelectorAll(".nav-link"); // Select all nav links
-    const firstSection = sections.length > 0 ? sections[0] : null; // Get the first section
-    let lastActiveSection = ""; // Store last active section to persist highlight
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const firstSection = sections.length > 0 ? sections[0] : null;
+    let lastActiveSection = "";
   
     function changeActiveLink() {
-      let currentSection = lastActiveSection; // Default to the last detected section
-      // Check if the user has scrolled above the first section
+      let currentSection = lastActiveSection;
+  
+      // Ignore report tab links with ?tab=
+      const validLinks = Array.from(navLinks).filter(link => {
+        const href = link.getAttribute("href");
+        return href && href.startsWith("#") && !href.includes("?tab=");
+      });
+  
+      // If above first section, clear highlights
       if (firstSection && window.scrollY < firstSection.offsetTop - 150) {
-        navLinks.forEach((link) => link.classList.remove("active")); // Remove active class
-        lastActiveSection = ""; // Reset last active section
+        validLinks.forEach((link) => link.classList.remove("active", "fw-bold", "text-dark"));
+        lastActiveSection = "";
         return;
       }
-      // Loop through sections and find which one is currently in view
+  
+      // Detect current visible section
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 200; // Adjust for better detection
-        const sectionBottom = sectionTop + section.offsetHeight + 200; // added buffer
-
+        const sectionTop = section.offsetTop - 200;
+        const sectionBottom = sectionTop + section.offsetHeight + 200;
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
           currentSection = section.getAttribute("id");
         }
       });
-
-      // Update the active link only if the section has changed
+  
+      // Only update if changed
       if (currentSection !== lastActiveSection) {
         lastActiveSection = currentSection;
-
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
+  
+        validLinks.forEach((link) => {
           const href = link.getAttribute("href");
-          if (href && href.includes(currentSection)) {
-            link.classList.add("active");
+          const targetId = href && href.startsWith("#") ? href.substring(1) : "";
+          link.classList.remove("active", "fw-bold", "text-dark");
+  
+          if (targetId === currentSection) {
+            link.classList.add("active", "fw-bold", "text-dark");
           }
         });
       }
     }
-    // Run on scroll event
-    window.addEventListener("scroll", changeActiveLink);
   
-    // Also run when page loads (e.g., if the user refreshes while scrolled down)
-    changeActiveLink();
+    window.addEventListener("scroll", changeActiveLink);
+    changeActiveLink(); // Initial run
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabId = urlParams.get("tab");
+  
+    if (tabId) {
+      // Activate correct Bootstrap tab
+      const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
+      const reportsSection = document.getElementById("reports-nav");
+  
+      if (tabTriggerEl && reportsSection) {
+        const tab = new bootstrap.Tab(tabTriggerEl);
+        tab.show();
+        reportsSection.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, "", window.location.pathname + "#reports-nav");
+      }
+  
+      // Sidebar link highlighting
+      document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        const linkTab = href && href.includes('?tab=') ? href.split('?tab=')[1].split('#')[0] : null;
+  
+        // Clear all previous styles
+        link.classList.remove('fw-bold', 'text-dark', 'active');
+  
+        // Highlight only matching sidebar link
+        if (linkTab === tabId) {
+          link.classList.add('fw-bold', 'text-dark');
+        }
+      });
+    }
+  });
+  document.querySelectorAll('.offcanvas a.nav-link').forEach(link => {
+  link.addEventListener('click', function (event) {
+    const href = this.getAttribute('href');
+
+    // Only handle links with tab parameters
+    if (href && href.includes('?tab=')) {
+      event.preventDefault(); // prevent default behavior
+
+      const [hash, query] = href.split('?'); // e.g. "#reports-nav", "tab=Bakery"
+      const params = new URLSearchParams(query);
+      const tabId = params.get('tab');
+
+      // Scroll to section
+      const targetSection = document.querySelector(hash);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Activate tab
+      const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
+      if (tabTriggerEl) {
+        const tab = new bootstrap.Tab(tabTriggerEl);
+        tab.show();
+      }
+
+      // Optional: clean up URL
+      history.replaceState(null, "", window.location.pathname + hash);
+    }
+  });
+});

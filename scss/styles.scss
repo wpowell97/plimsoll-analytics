@@ -32,6 +32,30 @@ html {
 
   background-color: #f9f9f9; // matches the subtle gray on site
 }
+#reports-nav .nav-tabs .nav-link {
+  border: none;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#reports-nav .nav-tabs .nav-link.active {
+  background-color: #f8f9fa;
+  border-bottom: 3px solid #dc3545; // Bootstrap danger red
+  color: #dc3545;
+}
+
+#reports-nav .card {
+  transition: box-shadow 0.3s ease;
+}
+
+#reports-nav .card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+#reports-nav .tab-content {
+  color: #212529 !important;
+  background-color: #ffffff !important;
+}
 .xl-text {
   font-size: 4.5rem;
   color: white;
@@ -151,13 +175,13 @@ html {
   margin: 20px;
   color: white; /* Ensures text is readable */
 }
-.report p {
+.lets-get-started p {
   color: white;
 }
-.report h3 {
+.lets-get-started h3 {
   color: white;
 }
-.report h4 {
+.lets-get-started h4 {
   color: white;
 }
 .findings p {
@@ -262,7 +286,7 @@ html {
     font-size: 50px;
   }
   .report {
-    padding: 40px 0 !important;
+    padding: 20px 0 !important;
   }
   .report h2 {
     text-align: center;
