@@ -1,451 +1,587 @@
 html {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-  .demo-button:hover {
-    background-color: white !important;
-    border-color: #2c4685 !important;
-    color: #2c4685 !important;
-  }
-  .menu-lighter {
-    background-color: #d7d8da;
-    height: 36%;
-  }
-  .overLay {
-    background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
-  }
-  #overview {
-    .shadow-sm {
-      transition: box-shadow 0.3s ease;
-      &:hover {
-        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
-      }
-    }
-  
-    h5 {
-      color: #2c4685;
-    }
-  
-    p {
-      color: #555;
-      line-height: 1.6;
-    }
-  
-    background-color: #f9f9f9; // matches the subtle gray on site
-  }
-  #reports-nav .nav-tabs .nav-link {
-    border: none;
-    font-weight: 500;
-    color: #333;
-    transition: all 0.3s ease;
-  }
-  
-  #reports-nav .nav-tabs .nav-link.active {
-    background-color: #f8f9fa;
-    border-bottom: 3px solid #dc3545; // Bootstrap danger red
-    color: #dc3545;
-  }
-  
-  #reports-nav .card {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.demo-button:hover {
+  background-color: white !important;
+  border-color: #2c4685 !important;
+  color: #2c4685 !important;
+}
+
+.menu-lighter {
+  background-color: #d7d8da;
+  height: 36%;
+}
+
+.overLay {
+  background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
+}
+
+#overview {
+  .shadow-sm {
     transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+    }
   }
-  
-  #reports-nav .card:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+
+  h5 {
+    color: #2c4685;
   }
-  #reports-nav .tab-content {
-    color: #212529 !important;
-    background-color: #ffffff !important;
+
+  p {
+    color: #555;
+    line-height: 1.6;
   }
-  #sideNav {
-    top: 5rem; // spacing from the top
-    height: calc(100vh - 5rem);
-    overflow-y: auto;
+
+  background-color: #f9f9f9; // matches the subtle gray on site
+}
+
+#reports-nav .nav-tabs .nav-link {
+  border: none;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#reports-nav .nav-tabs .nav-link.active {
+  background-color: #f8f9fa;
+  border-bottom: 3px solid #dc3545; // Bootstrap danger red
+  color: #dc3545;
+}
+
+#reports-nav .card {
+  transition: box-shadow 0.3s ease;
+}
+
+#reports-nav .card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+#reports-nav .tab-content {
+  color: #212529 !important;
+  background-color: #ffffff !important;
+}
+
+#sideNav {
+  top: 5rem; // spacing from the top
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+}
+
+.main-content {
+  padding-left: 2rem; // spacing between sidebar and content
+}
+
+#sideNav .nav-link.active {
+  font-weight: bold;
+  color: #000;
+  /* optional */
+}
+
+.top-navbar {
+  top: 72px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+:root {
+  overflow-x: hidden;
+}
+
+.xl-text {
+  font-size: 4.5rem;
+  color: white;
+}
+
+.navbar .btn-outline-light:hover {
+  --bs-dark: #212529;
+}
+
+.navbar {
+  transition: all 0.5s ease-in-out;
+  z-index: 1050;
+  /* Ensure it’s above other elements */
+}
+
+.navbar-sticky {
+  background: #fff;
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: black !important;
+}
+
+.red-line {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stat-title {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.stat-value {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.counter {
+  color: #55bafd;
+}
+
+.separator {
+  border: #55bafd;
+}
+
+.quote-bg {
+  background: linear-gradient(to bottom right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)),
+    url("../images/quote-background.webp") center center no-repeat;
+  background-size: cover;
+
+  .modal {
+    z-index: 1050 !important;
   }
-  
-  .main-content {
-    padding-left: 2rem; // spacing between sidebar and content
+
+  .offcanvas {
+    z-index: 1040 !important;
   }
-  #sideNav .nav-link.active {
-    font-weight: bold;
-    color: #000; /* optional */
-  }
-  .xl-text {
-    font-size: 4.5rem;
-    color: white;
-  }
-  .navbar .btn-outline-light:hover {
-    --bs-dark: #212529;
-  }
-  .navbar {
-    transition: all 0.5s ease-in-out;
-    z-index: 1050; /* Ensure it’s above other elements */
-  }
-  .navbar-sticky {
-    background: #fff;
-    opacity: 0.9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  }
-  .nav-link.active {
-    font-weight: bold;
-    color: black !important;
-  }
-  .red-line {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .stat-title {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: white;
-  }
-  .stat-value {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: white;
-  }
-  .counter {
-    color: #55bafd;
-  }
-  .separator {
-    border: #55bafd;
-  }
-  .quote-bg {
-    background: linear-gradient(
-        to bottom right,
+
+  // Change background on small screens
+  @media (max-width: 576px) {
+    background: linear-gradient(to bottom right,
         rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
-      ),
-      url("../images/quote-background.webp") center center no-repeat;
+        rgba(0, 0, 0, 0.6)),
+      url("../images/order-header.png") center center no-repeat;
     background-size: cover;
-  
-    .modal {
-      z-index: 1050 !important;
-    }
-    .offcanvas {
-      z-index: 1040 !important;
-    }
-    // Change background on small screens
-    @media (max-width: 576px) {
-      background: linear-gradient(
-          to bottom right,
-          rgba(0, 0, 0, 0.6),
-          rgba(0, 0, 0, 0.6)
-        ),
-        url("../images/order-header.png") center center no-repeat;
-      background-size: cover;
-      overflow-x: hidden; // Prevent horizontal scrolling
+    overflow-x: hidden; // Prevent horizontal scrolling
+  }
+}
+
+.navbar .btn:hover {
+  background-color: #d14247 !important;
+  border-color: #d14247;
+  color: white !important;
+}
+
+.get-started .btn:hover {
+  background-color: #d14247 !important;
+  border-color: #d14247;
+  color: white !important;
+}
+
+.vertical-decoration {
+  top: 12%;
+  width: 24px;
+}
+
+.to-top-btn {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #31477e;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: #d14247;
+  }
+
+  img {
+    margin-bottom: 0.25rem;
+    width: 18px;
+  }
+}
+
+.to-top-btn.show {
+  opacity: 1;
+}
+
+.show {
+  opacity: 1;
+}
+
+.stat-column {
+  background-color: #42677b;
+  padding: 15px;
+  padding-top: 40px;
+  margin: 20px;
+  color: white;
+  /* Ensures text is readable */
+}
+
+.lets-get-started p {
+  color: white;
+}
+
+.lets-get-started h3 {
+  color: white;
+}
+
+.lets-get-started h4 {
+  color: white;
+}
+
+.findings p {
+  color: black;
+}
+
+.findings h3 {
+  color: #1e1e33;
+}
+
+.findings-border {
+  position: relative;
+}
+
+.findings-border:after {
+  content: "";
+  height: 30%; //You can change this if you want smaller/bigger borders
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 20%; // If you want to set a smaller height and center it, change this value
+  background-color: #000000; // The color of your border
+}
+
+.card-body-2 {
+  border: 2px solid #55bafd;
+  padding: 10px;
+}
+
+.legal p {
+  font-size: 16px;
+  width: 100%;
+  color: white !important;
+  text-decoration: none;
+}
+
+.gray-background {
+  background-color: #eaeaea;
+}
+
+.p-dear {
+  font-size: 22px;
+}
+
+.p-dear-2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: fit-content;
+  border-bottom-right-radius: 1rem;
+}
+
+.red-box {
+  width: fit-content;
+}
+
+.order-today {
+  background: #de2a37;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: fit-content;
+  margin: auto;
+  border-bottom-right-radius: 1rem;
+}
+
+.order-today-hidden {
+  visibility: hidden;
+}
+
+.pricing-box {
+  background: #de2a37;
+  padding: 10px 15px;
+  width: fit-content;
+  text-align: center; // Ensures text inside is center-aligned
+  margin: 0 auto; // Centers the box horizontally
+}
+
+.pricing .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.placing-order {
+  background: #de2a37;
+}
+
+@media (max-width: 1000px) {
+  .hero .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero .text-container {
+    text-align: center;
+  }
+
+  .site-top .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-top .text-container {
+    text-align: center;
+  }
+
+  .xl-text {
+    font-size: 50px;
+  }
+
+  .report {
+    padding: 20px 0 !important;
+  }
+
+  .report h2 {
+    text-align: center;
+  }
+
+  .findings {
+    padding: 40px 0 !important;
+  }
+
+  .findings h2 {
+    text-align: center;
+  }
+
+  .signature {
+    margin-top: 20px !important;
+  }
+
+  .analysis .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar {
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+    opacity: 0.9;
+
+    .btn-outline-secondary {
+      margin-top: 20px;
     }
   }
-  .navbar .btn:hover {
-    background-color: #d14247 !important;
-    border-color: #d14247;
-    color: white !important;
-  }
+
   .get-started .btn:hover {
     background-color: #d14247 !important;
-    border-color: #d14247;
+    border-color: white;
     color: white !important;
   }
-  .vertical-decoration {
-    top: 12%;
-    width: 24px;
-  }
-  .to-top-btn {
-    position: fixed;
-    z-index: 20;
-    bottom: 20px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    background-color: #31477e;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  
-    &:hover {
-      background-color: #d14247;
-    }
-  
-    img {
-      margin-bottom: 0.25rem;
-      width: 18px;
-    }
-  }
-  .to-top-btn.show {
-    opacity: 1;
-  }
-  .show {
-    opacity: 1;
-  }
-  .stat-column {
-    background-color: #42677b;
-    padding: 15px;
-    padding-top: 40px;
-    margin: 20px;
-    color: white; /* Ensures text is readable */
-  }
-  .lets-get-started p {
+
+  .animate {
+    height: 200vh;
+    /* Just to allow scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
     color: white;
   }
-  .lets-get-started h3 {
-    color: white;
+
+  .animate-hidden {
+    opacity: 0;
   }
-  .lets-get-started h4 {
-    color: white;
+}
+
+@media (max-width: 767px) {
+
+  /* Bootstrap's md breakpoint */
+  .sm-border-none {
+    border-right: none !important;
   }
-  .findings p {
-    color: black;
-  }
-  .findings h3 {
-    color: #1e1e33;
-  }
-  .findings-border {
-    position: relative;
-  }
-  
+}
+
+// Hide border on smaller screens
+@media (max-width: 576px) {
   .findings-border:after {
-    content: "";
-    height: 30%; //You can change this if you want smaller/bigger borders
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: 20%; // If you want to set a smaller height and center it, change this value
-    background-color: #000000; // The color of your border
+    display: none;
   }
-  .card-body-2 {
-    border: 2px solid #55bafd;
-    padding: 10px;
-  }
-  .legal p {
-    font-size: 16px;
+
+  .red-line {
     width: 100%;
-    color: white !important;
-    text-decoration: none;
   }
-  .gray-background {
-    background-color: #eaeaea;
-  }
-  .p-dear {
-    font-size: 22px;
-  }
-  .p-dear-2 {
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: fit-content;
-    border-bottom-right-radius: 1rem;
-  }
-  .red-box {
-    width: fit-content;
-  }
-  .order-today {
-    background: #de2a37;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: fit-content;
-    margin: auto;
-    border-bottom-right-radius: 1rem;
-  }
-  .order-today-hidden {
-    visibility: hidden;
-  }
-  .pricing-box {
-    background: #de2a37;
-    padding: 10px 15px;
-    width: fit-content;
-    text-align: center; // Ensures text inside is center-aligned
-    margin: 0 auto; // Centers the box horizontally
-  }
-  .pricing .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .pricing .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .placing-order {
-    background: #de2a37;
-  }
-  @media (max-width: 1000px) {
-    .hero .image-container {
-      display: flex;
-      justify-content: center;
-    }
-    .hero .text-container {
-      text-align: center;
-    }
-    .site-top .image-container {
-      display: flex;
-      justify-content: center;
-    }
-    .site-top .text-container {
-      text-align: center;
-    }
-    .xl-text {
-      font-size: 50px;
-    }
-    .report {
-      padding: 20px 0 !important;
-    }
-    .report h2 {
-      text-align: center;
-    }
-    .findings {
-      padding: 40px 0 !important;
-    }
-    .findings h2 {
-      text-align: center;
-    }
-    .signature {
-      margin-top: 20px !important;
-    }
-    .analysis .image-container {
-      display: flex;
-      justify-content: center;
-    }
-    .navbar {
-      background: #fff;
-      transition: all 0.5s ease-in-out;
-      opacity: 0.9;
-      .btn-outline-secondary {
-        margin-top: 20px;
-      }
-    }
-    .get-started .btn:hover {
-      background-color: #d14247 !important;
-      border-color: white;
-      color: white !important;
-    }
-    .animate {
-      height: 200vh; /* Just to allow scrolling */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-color: #222;
-      color: white;
-    }
-    .animate-hidden {
-      opacity: 0;
-    }
-  }
-  @media (max-width: 767px) {
-    /* Bootstrap's md breakpoint */
-    .sm-border-none {
-      border-right: none !important;
-    }
-  }
-  // Hide border on smaller screens
-  @media (max-width: 576px) {
-    .findings-border:after {
-      display: none;
-    }
-    .red-line {
-      width: 100%;
-    }
-  }
+}
+
+.background-plimsoll {
+  background: url("../images/logo-overlay.png") center center no-repeat;
+  background-size: cover;
+  background-size: 20%;
+  background-position: 90% 95%;
+}
+
+@media (max-width: 576px) {
   .background-plimsoll {
-    background: url("../images/logo-overlay.png") center center no-repeat;
-    background-size: cover;
-    background-size: 20%;
-    background-position: 90% 95%;
+    background-image: none;
   }
-  @media (max-width: 576px) {
-    .background-plimsoll {
-      background-image: none;
-    }
+}
+
+// Sidebar for Large Screens
+.sidebar {
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+  background: #f8f9fa; // Matches Bootstrap light background
+  transition: opacity 0.3s ease;
+
+  .sidebar.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
-  // Sidebar for Large Screens
-  .sidebar {
-    width: 250px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid #ddd;
-    padding-top: 20px;
-    background: #f8f9fa; // Matches Bootstrap light background
-  }
-  
-  // Content Area - Ensuring Full Width
-  .content {
-    flex: 1;
-    margin-left: 250px; // No overlap with sidebar
-    width: calc(100vw - 250px); // Fill remaining space
-    max-width: 100%;
-    background: white; // Ensure consistent background
-  }
-  
-  // Bootstrap Container Fix (Remove Margins)
-  .container-fluid {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  // Mobile Menu Button Styling
+}
+
+// Content Area - Ensuring Full Width
+.content {
+  flex: 1;
+  margin-left: 250px; // No overlap with sidebar
+  width: calc(100vw - 250px); // Fill remaining space
+  max-width: 100%;
+  background: white; // Ensure consistent background
+}
+
+// Bootstrap Container Fix (Remove Margins)
+.container-fluid {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Mobile Menu Button Styling
+.menu-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1050;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+// Hide Menu Button on Large Screens
+@media (min-width: 992px) {
   .menu-button {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1050;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    display: none;
   }
-  
-  // Hide Menu Button on Large Screens
-  @media (min-width: 992px) {
-    .menu-button {
-      display: none;
-    }
-    .content {
-      margin-left: 250px;
-      width: calc(100vw - 250px);
-    }
+
+  .content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
   }
-  
-  // Adjust for Small Screens
-  @media (max-width: 991px) {
-    .content {
-      margin-left: 0;
-      width: 100%;
-      margin-top: 5rem;
-    }
+}
+
+// Adjust for Small Screens
+@media (max-width: 991px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 5rem;
   }
-  // Hide Menu Button on Medium Screens
-  @media (min-width: 1199px) {
-    .menu-button {
-      display: none;
-    }
-    .content {
-      margin-left: 250px;
-      width: calc(100vw - 250px);
-    }
+}
+
+// Hide Menu Button on Medium Screens
+@media (min-width: 1199px) {
+  .menu-button {
+    display: none;
   }
-  
-  // Adjust for Medium Screens
-  @media (max-width: 1199px) {
-    .content {
-      margin-left: 0;
-      width: 100%;
-    }
+
+  .content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
   }
+}
+
+// Adjust for Medium Screens
+@media (max-width: 1199px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* FAQ Section Styling */
+#faqs {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+#faqs h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.accordion-item {
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.accordion-button {
+  font-size: 1.2rem;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  color: #0d6efd;
+}
+
+.accordion-button i {
+  font-size: 1.2rem;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item + .accordion-item {
+  margin-top: 10px;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
