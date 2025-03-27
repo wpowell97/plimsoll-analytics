@@ -45,7 +45,7 @@
     </div>
     <div class="offcanvas offcanvas-start d-xl-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div class="offcanvas-header">
-        <a href="index.html" class="navbar-brand">
+        <a href="index.html" class="navbar-brand mt-2">
           <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" />
         </a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -59,30 +59,30 @@
           <li><a class="nav-link py-1 fw-semibold">REPORTS YOU FEATURE IN:</a></li>
           <li>
             <a href="?tab=Bakery#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Bakery"
-              data-target="#reports-nav">Bakery</a>
+              data-target="#reports-nav" data-bs-dismiss="offcanvas">Bakery</a>
           </li>
           <li>
             <a href="?tab=FoodManufacturing#reports-nav" class="nav-link pb-1 border-bottom"
-              data-tab="Food Manufacturing" data-target="#reports-nav">Food Manufacturing</a>
+              data-tab="Food Manufacturing" data-target="#reports-nav" data-bs-dismiss="offcanvas">Food Manufacturing</a>
           </li>
           <li>
             <a href="?tab=PastryFoodProducts#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Pastry Food
-            Products" data-target="#reports-nav">Pastry Food
+            Products" data-target="#reports-nav" data-bs-dismiss="offcanvas">Pastry Food
               Products</a>
           </li>
           <li>
             <a href="?tab=PieManufacturers#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Pie
-            Manufacturers" data-target="#reports-nav">Pie
+            Manufacturers" data-target="#reports-nav" data-bs-dismiss="offcanvas">Pie
               Manufacturers</a>
           </li>
           <li>
             <a href="?tab=SandwichProducers#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Sandwich
-            Producers" data-target="#reports-nav">Sandwich
+            Producers" data-target="#reports-nav" data-bs-dismiss="offcanvas">Sandwich
               Producers</a>
           </li>
           <li>
             <a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Top 500
-            Food Manufacturers" data-target="#reports-nav">Top 500
+            Food Manufacturers" data-target="#reports-nav" data-bs-dismiss="offcanvas">Top 500
               Food Manufacturers</a>
           </li>
           <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
@@ -96,8 +96,8 @@
         </ul>
         <div class="d-xl-none d-lg-block menu-lighter">
           <ul class="list-unstyled d-flex flex-column gap-2 p-3">
-            <li><a href="#pricing" class="nav-link py-1 border-bottom">Purchase Options</a></li>
-            <li><a href="#faqs" class="nav-link py-1 border-bottom">FAQ's</a></li>
+            <li><a href="#pricing" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">Purchase Options</a></li>
+            <li><a href="#faqs" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">FAQ's</a></li>
             <li>
               <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100" data-bs-toggle="modal"
                 data-bs-target="#demoModal" data-bs-dismiss="offcanvas">
@@ -416,35 +416,38 @@
                       who is up and who is falling
                     </p>
                     <div class="container">
-                      <div class="row">
+                      <div class="row text-center">
                         <div class="col-sm">
-                          <p class="text-dark text-center">
-                            <strong class="text-primary display-6 fw-semibold">934</strong><br> Companies included in
-                            this
-                            Industry Report – <br>
-                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                              View all companies
-                            </button>
+                          <p class="text-dark">
+                            <strong class="text-primary display-6 fw-semibold">934</strong><br> Companies included in this Industry Report – <br>
+                            <div class="d-flex justify-content-center">
+                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                                View all companies
+                              </button>
+                            </div>
                           </p>
                         </div>
                         <div class="col-sm">
-                          <p class="text-dark text-center">
+                          <p class="text-dark">
                             This industry belongs to the <strong class="text-primary"><br>Food Sector</strong> -<br>
-                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                              View Sector List
-                            </button>
+                            <div class="d-flex justify-content-center">
+                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                                View Sector List
+                              </button>
+                            </div>
                           </p>
                         </div>
                         <div class="col-sm">
-                          <p class="text-dark text-center">
-                            <strong class="text-primary display-6 fw-semibold">65</strong><br> Industries in the Food
-                            sector – <br>
-                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                              View industry list in this sector
-                            </button>
+                          <p class="text-dark">
+                            <strong class="text-primary display-6 fw-semibold">65</strong><br> Industries in the Food sector – <br>
+                            <div class="d-flex justify-content-center">
+                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                                View industry list in this sector
+                              </button>
+                            </div>
                           </p>
                         </div>
                       </div>
@@ -1009,7 +1012,7 @@
                 <img src="./images/board-report.png" alt=""
                   class="img-fluid rounded-2 justify-content-center shadow-lg mb-sm-3" />
               </div>
-              <div class="col-lg-6 col-xl-6 pt-lg-5 pt-xl-0">
+              <div class="col-lg-6 col-xl-6 pt-lg-5 pt-xl-5">
                 <h2 class="fw-bold mt-5 mt-md-0">Board Report</h2>
                 <hr class="heading" />
                 <p>

@@ -462,6 +462,7 @@
     pointer-events: none;
   }
 }
+
 // No sidebar on small screens
 @media (max-width: 991px) {
   .sidebar {
@@ -531,6 +532,7 @@
     width: 100%;
   }
 }
+
 /* FAQ Section Styling */
 #faqs {
   background-color: #f9f9f9;
@@ -573,20 +575,23 @@
   border-top: 1px solid #ddd;
 }
 
-.accordion-item + .accordion-item {
+.accordion-item+.accordion-item {
   margin-top: 10px;
 }
 
 .accordion-item:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 // Legal Section Styling
 .legal {
   background: linear-gradient(135deg, #2c4685); // Gradient background
+
   p {
     font-size: 1.1rem;
     line-height: 1.6;
   }
+
   a {
     &:hover {
       color: #ffdd57; // Highlight links on hover
@@ -604,6 +609,7 @@
     font-weight: 600;
   }
 }
+
 #overview {
   .container-xl {
     max-width: 1200px;
