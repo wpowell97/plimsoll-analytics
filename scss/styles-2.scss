@@ -383,7 +383,6 @@
   .navbar {
     background: #fff;
     transition: all 0.5s ease-in-out;
-    opacity: 0.9;
 
     .btn-outline-secondary {
       margin-top: 20px;
@@ -644,5 +643,13 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+  }
+}
+.mobile-navbar {
+  z-index: 1020; // same as .sticky-top in Bootstrap
+}
+#top-image {
+  @media (max-width: 991.98px) {
+    padding-top: 5rem; // or whatever your navbar height + spacing needs
   }
 }

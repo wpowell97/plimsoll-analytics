@@ -1,5 +1,5 @@
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
 
@@ -556,4 +556,7 @@ html {
       line-height: 1.6;
     }
   }
+}
+.navbar-brand img {
+  transform: translateZ(0);
 }

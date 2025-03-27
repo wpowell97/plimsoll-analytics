@@ -21,7 +21,8 @@
 <body class="no-x-scroll">
 
   <header class="position-sticky top-0 z-3 w-100">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <!-- Desktop nav -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-none d-xl-block">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand text-center">
           <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo"
@@ -29,20 +30,18 @@
         </a>
       </div>
     </nav>
+    <div class="mobile-navbar position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-4 navbar navbar-expand-lg navbar-light sticky-top d-xl-none">
+      <a href="index.html" class="top-logo">
+        <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" />
+      </a>
+      <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto me-2" data-bs-toggle="offcanvas"
+        data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        &#9776; Menu
+      </button>
+    </div>
+  </div>
 
     <!-- Offcanvas Menu for Small Screens -->
-    <div class="container">
-      <div
-        class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-4 navbar navbar-expand-lg navbar-light sticky-top d-xl-none">
-        <a href="index.html" class="top-logo">
-          <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" />
-        </a>
-        <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto me-2" data-bs-toggle="offcanvas"
-          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-          &#9776; Menu
-        </button>
-      </div>
-    </div>
     <div class="offcanvas offcanvas-start d-xl-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div class="offcanvas-header">
         <a href="index.html" class="navbar-brand mt-2">
@@ -63,7 +62,8 @@
           </li>
           <li>
             <a href="?tab=FoodManufacturing#reports-nav" class="nav-link pb-1 border-bottom"
-              data-tab="Food Manufacturing" data-target="#reports-nav" data-bs-dismiss="offcanvas">Food Manufacturing</a>
+              data-tab="Food Manufacturing" data-target="#reports-nav" data-bs-dismiss="offcanvas">Food
+              Manufacturing</a>
           </li>
           <li>
             <a href="?tab=PastryFoodProducts#reports-nav" class="nav-link pb-1 border-bottom" data-tab="Pastry Food
@@ -96,7 +96,8 @@
         </ul>
         <div class="d-xl-none d-lg-block menu-lighter">
           <ul class="list-unstyled d-flex flex-column gap-2 p-3">
-            <li><a href="#pricing" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">Purchase Options</a></li>
+            <li><a href="#pricing" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">Purchase Options</a>
+            </li>
             <li><a href="#faqs" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">FAQ's</a></li>
             <li>
               <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100" data-bs-toggle="modal"
@@ -117,11 +118,10 @@
   </header>
 
   <!-- Top Image -->
-  <section id="top-image">
-    <div class="container-fluid mt-5 mt-sm-0">
+  <section id="top-image" class="pt-md-5 pt-lg-0">
+    <div class="container-fluid">
       <div class="row position-relative">
-        <div class="col">
-        </div>
+        <div class="col"></div>
         <div class="col-6">
           <img class="img-fluid" src="./images/hero-image.png" alt="Industry overview illustration" />
         </div>
@@ -267,26 +267,30 @@
               <div class="col-lg-10 text-center">
                 <h1 class="display-4 fw-bold pb-3 border-bottom border-danger border-4">Overview</h1>
                 <p class="lead fw-bold">
-                  The Plimsoll Analysis is used by senior decision makers at some of the world's leading companies to give them
-                  the intelligence they need to make sense of the markets they operate in. Our analysis is continuously updated
+                  The Plimsoll Analysis is used by senior decision makers at some of the world's leading companies to
+                  give them
+                  the intelligence they need to make sense of the markets they operate in. Our analysis is continuously
+                  updated
                   using the latest available data from Companies House to ensure you have the latest view of the market.
                 </p>
               </div>
             </div>
-        
+
             <div class="row g-4">
               <div class="col-md-6">
                 <div class="p-4 bg-white shadow-lg rounded h-100 text-center">
                   <i class="bi bi-people-fill text-primary display-4 mb-3"></i>
                   <h3 class="fw-semibold text-primary">About Us</h3>
                   <p>
-                    We specialise in industry and company financial analysis, helping businesses make informed decisions. Since
-                    our founding in 1987, we have built a reputation as a trusted partner for over 40,000 businesses across 96
+                    We specialise in industry and company financial analysis, helping businesses make informed
+                    decisions. Since
+                    our founding in 1987, we have built a reputation as a trusted partner for over 40,000 businesses
+                    across 96
                     countries.
                   </p>
                 </div>
               </div>
-        
+
               <div class="col-md-6">
                 <div class="p-4 bg-white shadow-lg rounded h-100 text-center">
                   <i class="bi bi-lightbulb-fill text-primary display-4 mb-3"></i>
@@ -297,34 +301,38 @@
                   </p>
                 </div>
               </div>
-        
+
               <div class="col-md-6">
                 <div class="p-4 bg-white shadow-lg rounded h-100 text-center">
                   <i class="bi bi-globe text-primary display-4 mb-3"></i>
                   <h3 class="fw-semibold text-primary">Our Global Coverage</h3>
                   <p>
-                    Our platform delivers insights across 1,600+ global industries, enabling leaders to benchmark performance,
+                    Our platform delivers insights across 1,600+ global industries, enabling leaders to benchmark
+                    performance,
                     uncover threats, and spot growth opportunities.
                   </p>
                 </div>
               </div>
-        
+
               <div class="col-md-6">
                 <div class="p-4 bg-white shadow-lg rounded h-100 text-center">
                   <i class="bi bi-bar-chart-fill text-primary display-4 mb-3"></i>
                   <h3 class="fw-semibold text-primary">The Plimsoll Rating</h3>
                   <p>
-                    Our proprietary rating system categorizes companies from <strong>Strong</strong> to <strong>Danger</strong>.
+                    Our proprietary rating system categorizes companies from <strong>Strong</strong> to
+                    <strong>Danger</strong>.
                     90% of firms that entered administration were rated "Danger" up to two years before collapse.
                   </p>
                 </div>
               </div>
-        
+
               <div class="col-12">
                 <div class="p-4 bg-white shadow-lg rounded text-center">
                   <p class="mb-0">
-                    Based in Stockton-on-Tees, UK, we are committed to simplifying complex financial data into clear, actionable
-                    insights. Whether you’re looking to safeguard your business, evaluate competitors, or explore acquisition
+                    Based in Stockton-on-Tees, UK, we are committed to simplifying complex financial data into clear,
+                    actionable
+                    insights. Whether you’re looking to safeguard your business, evaluate competitors, or explore
+                    acquisition
                     opportunities, Plimsoll is here to help you navigate your market with confidence.
                   </p>
                 </div>
@@ -419,35 +427,37 @@
                       <div class="row text-center">
                         <div class="col-sm">
                           <p class="text-dark">
-                            <strong class="text-primary display-6 fw-semibold">934</strong><br> Companies included in this Industry Report – <br>
-                            <div class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                                View all companies
-                              </button>
-                            </div>
+                            <strong class="text-primary display-6 fw-semibold">934</strong><br> Companies included in
+                            this Industry Report – <br>
+                          <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                              View all companies
+                            </button>
+                          </div>
                           </p>
                         </div>
                         <div class="col-sm">
                           <p class="text-dark">
                             This industry belongs to the <strong class="text-primary"><br>Food Sector</strong> -<br>
-                            <div class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                                View Sector List
-                              </button>
-                            </div>
+                          <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                              View Sector List
+                            </button>
+                          </div>
                           </p>
                         </div>
                         <div class="col-sm">
                           <p class="text-dark">
-                            <strong class="text-primary display-6 fw-semibold">65</strong><br> Industries in the Food sector – <br>
-                            <div class="d-flex justify-content-center">
-                              <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
-                                onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
-                                View industry list in this sector
-                              </button>
-                            </div>
+                            <strong class="text-primary display-6 fw-semibold">65</strong><br> Industries in the Food
+                            sector – <br>
+                          <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary rounded-1 mt-2"
+                              onclick="window.open('https://www.plimsoll.co.uk/market-reports/bakery#0', '_blank')">
+                              View industry list in this sector
+                            </button>
+                          </div>
                           </p>
                         </div>
                       </div>
@@ -897,6 +907,8 @@
               <div class="col-lg-6">
                 <img src="images/industry-analytics.png" alt="Plimsoll Diagram"
                   class="img-fluid rounded-2 mt-xl-6 ms-xl-3 shadow-lg" />
+                  <img src="images/logo-overlay.png" alt="Plimsoll Diagram"
+                  class="img-fluid mt-xl-6 ms-xl-3 shadow-lg float-end" />
               </div>
             </div>
           </div>
@@ -1124,7 +1136,7 @@
   </section>
 
   <!-- Purchasing Options -->
-  <section id="pricing" class="pricing mb-5 report bg-dark pt-3 pb-6 overflow-hidden">
+  <section id="pricing" class="pricing mb-4 report bg-dark pt-3 pb-6 overflow-hidden">
     <div class="">
       <div class="row mb-3">
         <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
@@ -1195,11 +1207,11 @@
 
   <!-- FAQ's -->
 
-  <section id="faqs" class="mx-3 overflow-hidden text-center">
+  <section id="faqs" class="mx-2 overflow-hidden text-center">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>Frequently Asked Questions</h1>
+          <h2 class="pb-4">Frequently Asked Questions</h2>
           <div class="accordion accordion-flush text-start" id="accordionFlushExample">
             <div class="accordion-item border rounded shadow-sm mb-3">
               <h2 class="accordion-header" id="flush-headingOne">
@@ -1444,16 +1456,18 @@
         <div class="row justify-content-center text-center">
           <div class="col-md-8">
             <p class="mb-2">
-              <strong>Plimsoll Publishing Ltd</strong><br>
+              <strong>Office Hours:</strong> 8.00 hrs - 17.30 hrs GMT<br>
               Scotswood House, Teesdale South, Stockton on Tees, TS17 6SB, United Kingdom
             </p>
             <p class="mb-2">
               <i class="bi bi-telephone-fill me-2"></i> +(0)1642 626400 |
               <i class="bi bi-printer-fill me-2"></i> +44(01642 626410) |
-              <i class="bi bi-envelope-fill me-2"></i> <a href="mailto:s.ogden@plimsoll.co.uk" class="text-white text-decoration-underline">s.ogden@plimsoll.co.uk</a>
+              <i class="bi bi-envelope-fill me-2"></i> <a href="mailto:s.ogden@plimsoll.co.uk"
+                class="text-white text-decoration-underline">s.ogden@plimsoll.co.uk</a>
             </p>
             <p class="mb-0">
-              <i class="bi bi-globe me-2"></i> <a href="https://www.plimsoll.co.uk" class="text-white text-decoration-underline">www.plimsoll.co.uk</a>
+              <i class="bi bi-globe me-2"></i> <a href="https://www.plimsoll.co.uk"
+                class="text-white text-decoration-underline">www.plimsoll.co.uk</a>
             </p>
             <p class="mt-3 small">
               Registered in England & Wales No: 2102017 | VAT Registration: GB 441571072
@@ -1462,16 +1476,30 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Footer Section -->
     <section class="footer bg-dark text-white py-4">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8 text-md-start text-center">
-            <strong>Office Hours:</strong> 8.00 hrs - 17.30 hrs GMT
-          </div>
-          <div class="col-md-4 text-md-end text-center">
             © Plimsoll 2025 - Plimsoll Publishing Limited
+          </div>
+          <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+            <a href="https://www.facebook.com/plimsollpublishing/" class="text-decoration-none" title="Visit our Facebook page" target="_blank" rel="noopener">
+              <i class="fab fa-facebook fa-2x text-light mx-2"></i>
+            </a>
+            <a href="https://x.com/PPublishingLtd" class="text-decoration-none" title="Visit our X page" target="_blank" rel="noopener">
+              <i class="fab bi-twitter-x fa-2x text-light mx-2"></i>
+            </a>
+            <a href="https://www.instagram.com/plimsollpublishing/" class="text-decoration-none" title="Visit our Instagram page" target="_blank" rel="noopener">
+              <i class="fab fa-instagram fa-2x text-light mx-2"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plimsoll/" class="text-decoration-none" title="Visit our LikedIn page" target="_blank" rel="noopener">
+              <i class="fab bi-linkedin fa-2x text-light mx-2"></i>
+            </a>
+            <a href="http://www.youtube.com/PlimsollPub" class="text-decoration-none" title="Visit our YouTube page" target="_blank" rel="noopener">
+              <i class="fab bi-youtube fa-2x text-light mx-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1491,4 +1519,4 @@
   <script src="js/script-2.js" defer></script>
 </body>
 
-</html>
+</html

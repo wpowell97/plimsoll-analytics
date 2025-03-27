@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
@@ -165,7 +164,8 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <!-- Start of Meetings Embed Script -->
-          <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/wpowell?embed=true"></div>
+          <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/wpowell?embed=true">
+          </div>
           <script type="text/javascript"
             src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
           <!-- End of Meetings Embed Script -->
@@ -234,20 +234,18 @@
   <main class="content">
     <div class="container-fluid">
 
-      <!-- Top Image -->
-      <section id="top-image">
-        <div class="container-fluid d-none d-sm-block">
-          <div class="row position-relative">
-            <div class="col">
-
-            </div>
-            <div class="col-6">
-              <img class="img-fluid" src="./images/hero-image.png" alt="Industry overview illustration" />
-            </div>
-            <div class="overLay position-absolute top-0 bottom-0"></div>
-          </div>
+  <!-- Top Image -->
+  <section id="top-image" class="pt-md-5 pt-lg-0">
+    <div class="container-fluid">
+      <div class="row position-relative">
+        <div class="col"></div>
+        <div class="col-6">
+          <img class="img-fluid" src="./images/hero-image.png" alt="Industry overview illustration" />
         </div>
-      </section>
+        <div class="overLay position-absolute top-0 bottom-0"></div>
+      </div>
+    </div>
+  </section>
 
       <!-- Industry Overview -->
       <section id="overview" class="site-top text-dark py-5 bg-light">
@@ -978,7 +976,7 @@
               <img src="./images/board-report.png" alt=""
                 class="img-fluid rounded-2 justify-content-center shadow-lg mb-sm-3" />
             </div>
-            <div class="col-lg-6 col-xl-6 pt-lg-5 pt-xl-0">              
+            <div class="col-lg-6 col-xl-6 pt-lg-5 pt-xl-0">
               <h2 class="fw-bold mt-5 mt-md-0">Board Report</h2>
               <hr class="heading" />
               <p>
@@ -1161,7 +1159,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1>Frequently Asked Questions</h1>
+              <h1 class="pb-4">Frequently Asked Questions</h1>
               <div class="accordion accordion-flush text-start" id="accordionFlushExample">
                 <div class="accordion-item border rounded shadow-sm mb-3">
                   <h2 class="accordion-header" id="flush-headingOne">
