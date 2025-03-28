@@ -521,6 +521,33 @@ html {
     width: 100%;
   }
 }
+// Legal Section Styling
+.legal {
+  background: linear-gradient(135deg, #2c4685); // Gradient background
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  a {
+    &:hover {
+      color: #ffdd57; // Highlight links on hover
+    }
+  }
+}
+
+// Footer Section Styling
+.footer {
+  background-color: #212529; // Dark background
+  border-top: 3px solid #dc3545; // Add a red border at the top
+  font-size: 0.9rem;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
 #overview {
   .container-xl {
     max-width: 1200px;
@@ -559,4 +586,21 @@ html {
 }
 .navbar-brand img {
   transform: translateZ(0);
+}
+.btn-pulsing {
+  animation: pulse 2.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
