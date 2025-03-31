@@ -123,6 +123,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ✅ Animate headings on scroll
+  const headings = document.querySelectorAll('h2[data-animate]');
+
+  headings.forEach((heading) => {
+    const bounceClass = heading.dataset.animate;
+    heading.classList.remove('animate__animated', `animate__${bounceClass}`);
+    heading.style.visibility = 'hidden';
+    heading.dataset.bounceClass = `animate__${bounceClass}`;
+  });
+
+  const headingObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        const el = entry.target;
+        el.style.visibility = 'visible';
+        el.classList.add('animate__animated', el.dataset.bounceClass);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  headings.forEach((heading) => headingObserver.observe(heading));
+
   // Initialize scroll event listener for navbar and "to top" button
   userScroll();
 });
@@ -367,4 +390,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(endTrigger);
   }
+});
+// Red Line Animation //
+document.addEventListener("DOMContentLoaded", () => {
+  const heading = document.querySelector(".animated-heading");
+
+  heading.addEventListener("animationend", () => {
+    console.log("✅ Heading animation ended");
+    const redLine = heading.querySelector(".red-line-animation");
+    console.log("Red line found:", redLine);
+    redLine.classList.add("active");
+  });
 });

@@ -25,6 +25,16 @@ html {
 
 .overLay {
   background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+ 
+.overLay h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 #overview {
@@ -122,6 +132,18 @@ html {
   display: block;
 }
 
+.red-line-animation {
+  background: red;
+  display: block;
+  height: 4px;
+  width: 0;
+  margin-top: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.red-line-animation.active {
+  width: 100%;
+}
 .stat-title {
   font-size: 1rem;
   margin-bottom: 5px;
@@ -291,7 +313,13 @@ html {
   width: fit-content;
   border-bottom-right-radius: 1rem;
 }
+.faq-title {
+  font-size: 1rem; // Default font size for smaller screens
 
+  @media (min-width: 992px) { // Bootstrap's lg breakpoint
+    font-size: 1.25rem; // Equivalent to fs-5
+  }
+}
 .red-box {
   width: fit-content;
 }
@@ -415,7 +443,6 @@ html {
     opacity: 0;
   }
 }
-
 @media (max-width: 767px) {
 
   /* Bootstrap's md breakpoint */
