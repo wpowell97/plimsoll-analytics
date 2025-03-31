@@ -2,7 +2,12 @@ html {
   overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
-
+.reports-featured {
+  font-size: 0.93em;
+}
+.demo-button {
+  font-size: 0.93rem;
+}
 .demo-button:hover {
   background-color: white !important;
   border-color: #2c4685 !important;
