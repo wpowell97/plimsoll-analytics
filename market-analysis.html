@@ -243,7 +243,7 @@
               <img class="img-fluid" src="./images/hero-image.png" alt="Industry overview illustration" />
             </div>
             <div class="overLay position-absolute top-0 bottom-0 w-100">
-              <h1 class="text-white text-center ms-5 ps-5 d-none d-md-block animate__animated animate__slideInUp animate__delay-1s">
+              <h1 id="hero-heading" class="text-white text-center ms-5 ps-5 d-none d-md-block animate__animated animate__slideInUp animate__delay-1s">
                 Always above the line.
                 <span class="red-line-animation"></span>
               </h1>
@@ -1497,6 +1497,24 @@
   <!-- Scripts -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heading = document.getElementById("hero-heading");
+      if (!heading) return;
+  
+      const redLine = heading.querySelector(".red-line-animation");
+  
+      // Fallback + debug logging
+      setTimeout(() => {
+        if (redLine) {
+          redLine.classList.add("active");
+          console.log("✅ .active applied to red line");
+        } else {
+          console.warn("⚠️ red-line-animation span not found inside heading");
+        }
+      }, 2500);
+    });
+  </script>
 </body>
 
 </html>

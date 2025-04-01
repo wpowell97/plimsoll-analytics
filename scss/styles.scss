@@ -133,7 +133,7 @@ html {
 }
 
 .red-line-animation {
-  background: red;
+  background: #de2a37;
   display: block;
   height: 4px;
   width: 0;
@@ -144,6 +144,7 @@ html {
 .red-line-animation.active {
   width: 100%;
 }
+
 .stat-title {
   font-size: 1rem;
   margin-bottom: 5px;

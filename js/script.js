@@ -392,13 +392,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 // Red Line Animation //
-document.addEventListener("DOMContentLoaded", () => {
-  const heading = document.querySelector(".animated-heading");
+document.addEventListener("DOMContentLoaded", function () {
+  const heading = document.getElementById("hero-heading");
 
-  heading.addEventListener("animationend", () => {
-    console.log("✅ Heading animation ended");
-    const redLine = heading.querySelector(".red-line-animation");
-    console.log("Red line found:", redLine);
-    redLine.classList.add("active");
-  });
+  if (!heading) return;
+
+  const redLine = heading.querySelector(".red-line-animation");
+
+  const triggerRedLine = () => {
+    if (redLine && !redLine.classList.contains("active")) {
+      redLine.classList.add("active");
+    }
+  };
+
+  // If animationend is supported and fires
+  heading.addEventListener("animationend", triggerRedLine);
+
+  // Fallback: trigger manually after 2.5s (matches delay + animation time)
+  setTimeout(triggerRedLine, 2500);
 });
