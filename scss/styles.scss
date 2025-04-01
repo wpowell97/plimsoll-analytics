@@ -1,6 +1,6 @@
 html {
   overflow-x: hidden !important;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 .reports-featured {
   font-size: 0.93em;
@@ -122,8 +122,8 @@ html {
 }
 
 .nav-link.active {
-  font-weight: bold;
-  color: black !important;
+  font-weight: bolder;
+  color: #253d7a !important;
 }
 
 .red-line {

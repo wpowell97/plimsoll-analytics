@@ -1,3 +1,21 @@
+  // Red line animation for the hero heading //
+  document.addEventListener("DOMContentLoaded", function () {
+    const heading = document.getElementById("hero-heading");
+    if (!heading) return;
+  
+    const redLine = heading.querySelector(".red-line-animation");
+  
+    // Fallback + debug logging
+    setTimeout(() => {
+      if (redLine) {
+        redLine.classList.add("active");
+        console.log("✅ .active applied to red line");
+      } else {
+        console.warn("⚠️ red-line-animation span not found inside heading");
+      }
+    }, 2500);
+  });
+  
 // Wait until the DOM is fully loaded before executing the script
 document.addEventListener("DOMContentLoaded", function () {
   // Select the navigation bar
@@ -240,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 });
-// Detection of active link to then turn text bold and black
+// GOLD DUST - Detection of active link to then turn text bold
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -256,10 +274,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return href && href.startsWith("#") && !href.includes("?tab=");
     });
 
-    // If above first section, clear highlights
+    // Clear highlights if above the first section
     if (firstSection && window.scrollY < firstSection.offsetTop - 150) {
       validLinks.forEach((link) =>
-        link.classList.remove("active", "fw-bold", "text-dark")
+        link.classList.remove("active", "fw-bold", "text-secondary")
       );
       lastActiveSection = "";
       return;
@@ -281,17 +299,37 @@ document.addEventListener("DOMContentLoaded", function () {
       validLinks.forEach((link) => {
         const href = link.getAttribute("href");
         const targetId = href && href.startsWith("#") ? href.substring(1) : "";
-        link.classList.remove("active", "fw-bold", "text-dark");
 
+        // Remove active class from all links
+        link.classList.remove("active", "fw-bold", "text-secondary");
+
+        // Add active class only to the current section
         if (targetId === currentSection) {
-          link.classList.add("active", "fw-bold", "text-dark");
+          link.classList.add("active", "fw-bold", "text-secondary");
         }
       });
+
+      // Explicitly handle the Bakery tab
+      const bakeryLink = document.querySelector('.nav-link[href="#reports-nav"]');
+      if (bakeryLink && currentSection !== "reports-nav") {
+        bakeryLink.classList.remove("active", "fw-bold", "text-secondary");
+      }
     }
   }
 
+  // Add event listener for scroll
   window.addEventListener("scroll", changeActiveLink);
   changeActiveLink(); // Initial run
+
+  // Add click event listener to ensure only clicked tab is bold
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      validLinks.forEach((link) =>
+        link.classList.remove("active", "fw-bold", "text-secondary")
+      );
+      this.classList.add("active", "fw-bold", "text-secondary");
+    });
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -321,11 +359,11 @@ document.addEventListener("DOMContentLoaded", function () {
           : null;
 
       // Clear all previous styles
-      link.classList.remove("fw-bold", "text-dark", "active");
+      link.classList.remove("fw-bold", "text-secondary", "active");
 
       // Highlight only matching sidebar link
       if (linkTab === tabId) {
-        link.classList.add("fw-bold", "text-dark");
+        link.classList.add("fw-bold", "text-secondary" );
       }
     });
   }
@@ -390,24 +428,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(endTrigger);
   }
-});
-// Red Line Animation //
-document.addEventListener("DOMContentLoaded", function () {
-  const heading = document.getElementById("hero-heading");
-
-  if (!heading) return;
-
-  const redLine = heading.querySelector(".red-line-animation");
-
-  const triggerRedLine = () => {
-    if (redLine && !redLine.classList.contains("active")) {
-      redLine.classList.add("active");
-    }
-  };
-
-  // If animationend is supported and fires
-  heading.addEventListener("animationend", triggerRedLine);
-
-  // Fallback: trigger manually after 2.5s (matches delay + animation time)
-  setTimeout(triggerRedLine, 2500);
 });

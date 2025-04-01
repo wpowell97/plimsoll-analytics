@@ -34,15 +34,12 @@
       </div>
       <ul class="list-unstyled mt-2">
         <li><a class="nav-link py-1 fw-semibold reports-featured">REPORTS YOU FEATURE IN:</a></li>
-        <li><a href="#reports-nav" class="nav-link py-1 border-bottom">Bakery</a></li>
+        <li><a href="?tab=Bakery#reports-nav" class="nav-link py-1 border-bottom">Bakery</a></li>
         <li><a href="?tab=FoodManufacturing#reports-nav" class="nav-link py-1 border-bottom">Food Manufacturing</a></li>
-        <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a>
-        </li>
+        <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a></li>
         <li><a href="?tab=PieManufacturers#reports-nav" class="nav-link py-1 border-bottom">Pie Manufacturers</a></li>
         <li><a href="?tab=SandwichProducers#reports-nav" class="nav-link py-1 border-bottom">Sandwich Producers</a></li>
-        <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food
-            Manufacturers</a>
-        </li>
+        <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food Manufacturers</a></li>
       </ul>
       <ul class="list-unstyled mt-2">
         <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
@@ -1497,24 +1494,6 @@
   <!-- Scripts -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heading = document.getElementById("hero-heading");
-      if (!heading) return;
-  
-      const redLine = heading.querySelector(".red-line-animation");
-  
-      // Fallback + debug logging
-      setTimeout(() => {
-        if (redLine) {
-          redLine.classList.add("active");
-          console.log("✅ .active applied to red line");
-        } else {
-          console.warn("⚠️ red-line-animation span not found inside heading");
-        }
-      }, 2500);
-    });
-  </script>
 </body>
 
 </html>
