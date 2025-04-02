@@ -418,27 +418,42 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".offcanvas a.nav-link").forEach((link) => {
     link.addEventListener("click", function (event) {
       const href = this.getAttribute("href");
-
+  
       if (href && href.includes("?tab=")) {
         event.preventDefault();
-
-        const [hash, query] = href.split("?");
-        const params = new URLSearchParams(query);
+  
+        // Correct order: split on `#` first to get the anchor, then on `?`
+        const [urlPart, hash] = href.split("#"); // 'urlPart' will be '?tab=Bakery'
+        const params = new URLSearchParams(urlPart.split("?")[1]);
         const tabId = params.get("tab");
-
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
+  
+        // Scroll to anchor
+        if (hash) {
+          const targetSection = document.querySelector("#" + hash);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
         }
-
+  
+        // Activate correct tab
         const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
         if (tabTriggerEl) {
           const tab = new bootstrap.Tab(tabTriggerEl);
           tab.show();
         }
-
-        highlightSidebarLink(tabId);
-        history.replaceState(null, "", window.location.pathname + hash);
+  
+        // Update URL
+        const newUrl = window.location.pathname + "?tab=" + tabId + (hash ? "#" + hash : "");
+        history.replaceState(null, "", newUrl);
+  
+        // Manually close offcanvas
+        const offcanvasEl = document.querySelector(".offcanvas.show");
+        if (offcanvasEl) {
+          const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+          if (bsOffcanvas) {
+            bsOffcanvas.hide();
+          }
+        }
       }
     });
   });
