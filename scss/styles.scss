@@ -2,36 +2,41 @@ html {
   overflow-x: hidden !important;
   scroll-behavior: smooth !important;
 }
+
 .reports-featured {
   font-size: 0.93em;
 }
+
 .demo-button {
   font-size: 0.93rem;
 }
+
 .demo-button:hover {
   background-color: white !important;
   border-color: #2c4685 !important;
   color: #2c4685 !important;
 }
+
 .fab-four {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
+
 .menu-lighter {
   background-color: #d7d8da;
-  height: 32.4%;
+  height: 34.8%;
 }
 
-.overLay {
+.overlay {
   background-image: linear-gradient(to left, rgba(7, 28, 63, 0) 30%, #071c3f 50%);
   color: white;
   display: flex;
   align-items: center;
   z-index: 1;
 }
- 
-.overLay h2 {
+
+.overlay h2 {
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
@@ -314,13 +319,16 @@ html {
   width: fit-content;
   border-bottom-right-radius: 1rem;
 }
+
 .faq-title {
   font-size: 1rem; // Default font size for smaller screens
 
-  @media (min-width: 992px) { // Bootstrap's lg breakpoint
+  @media (min-width: 992px) {
+    // Bootstrap's lg breakpoint
     font-size: 1.25rem; // Equivalent to fs-5
   }
 }
+
 .red-box {
   width: fit-content;
 }
@@ -444,6 +452,7 @@ html {
     opacity: 0;
   }
 }
+
 @media (max-width: 767px) {
 
   /* Bootstrap's md breakpoint */
@@ -558,6 +567,7 @@ html {
     width: 100%;
   }
 }
+
 // Legal Section Styling
 .legal {
   background: linear-gradient(135deg, #2c4685); // Gradient background
@@ -621,9 +631,11 @@ html {
     }
   }
 }
+
 .navbar-brand img {
   transform: translateZ(0);
 }
+
 .btn-pulsing {
   animation: pulse 2.2s infinite;
 }
@@ -640,4 +652,10 @@ html {
   100% {
     transform: scale(1);
   }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }

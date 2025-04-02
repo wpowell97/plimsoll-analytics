@@ -21,28 +21,36 @@
 <body class="no-x-scroll">
 
   <!--Navigation on Extra Large Screens -->
-  <nav class="sidebar d-none d-xl-block bg-light z-3">
+  <nav class="sidebar d-none d-xl-block bg-light z-3" role="navigation" aria-label="Sidebar navigation">
     <div class="p-4">
       <a href="index.html" class="navbar-brand text-center">
         <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" class="img-fluid" />
       </a>
       <div class="mt-4">
         <ul class="list-unstyled">
-          <li><a class="nav-link pb-1 fw-semibold">INTRODUCTION:</a></li>
+          <li>
+            <h2 class="h6 text-uppercase fw-semibold mb-2">introduction</h2>
+          </li>
           <li><a href="#overview" class="nav-link pb-1 border-bottom">Overview</a></li>
         </ul>
       </div>
       <ul class="list-unstyled mt-2">
-        <li><a class="nav-link py-1 fw-semibold reports-featured">REPORTS YOU FEATURE IN:</a></li>
+        <li>
+          <h2 class="h6 text-uppercase fw-semibold mb-2">reports you feature in:</h2>
+        </li>
         <li><a href="?tab=Bakery#reports-nav" class="nav-link py-1 border-bottom">Bakery</a></li>
         <li><a href="?tab=FoodManufacturing#reports-nav" class="nav-link py-1 border-bottom">Food Manufacturing</a></li>
-        <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a></li>
+        <li><a href="?tab=PastryFoodProducts#reports-nav" class="nav-link py-1 border-bottom">Pastry Food Products</a>
+        </li>
         <li><a href="?tab=PieManufacturers#reports-nav" class="nav-link py-1 border-bottom">Pie Manufacturers</a></li>
         <li><a href="?tab=SandwichProducers#reports-nav" class="nav-link py-1 border-bottom">Sandwich Producers</a></li>
-        <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food Manufacturers</a></li>
+        <li><a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link py-1 border-bottom">Top 500 Food
+            Manufacturers</a></li>
       </ul>
       <ul class="list-unstyled mt-2">
-        <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
+        <li>
+          <h2 class="h6 text-uppercase fw-semibold mb-2">services</h2>
+        </li>
         <li><a href="#what-we-offer" class="nav-link py-1 border-bottom">What We Offer</a></li>
         <li><a href="#lets-get-started" class="nav-link py-1 border-bottom">Let's Get Started</a></li>
       </ul>
@@ -70,16 +78,17 @@
   <!--Navigation on Large - Extra Small Screens -->
   <header class="header">
     <div class="container">
-      <div
-        class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-3 navbar navbar-expand-lg navbar-light sticky-top d-xl-none">
+      <nav
+        class="position-fixed d-flex justify-content-between align-items-center start-0 end-0 bg-light p-3 z-3 navbar navbar-expand-lg navbar-light sticky-top d-xl-none"
+        role="navigation" aria-label="Mobile navigation">
         <a href="index.html" class="top-logo">
           <img src="https://www.plimsoll.co.uk/img/logo-plimsoll.svg" alt="Plimsoll Logo" />
         </a>
         <button type="button" class="btn btn-primary fw-semibold rounded-1 ms-auto me-3" data-bs-toggle="offcanvas"
           data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-          &#9776; Menu
+          <i class="bi bi-list"></i> Menu
         </button>
-      </div>
+      </nav>
     </div>
 
     <!-- Offcanvas Menu for Small Screens -->
@@ -91,49 +100,58 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body p-0 d-flex flex-column">
-        <ul class="list-unstyled d-flex flex-column gap-2 p-3">
-          <li><a class="nav-link pb-1 fw-semibold">INTRODUCTION:</a></li>
-          <li>
-            <a href="#overview" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Overview</a>
-          </li>
-          <li><a class="nav-link py-1 fw-semibold">REPORTS YOU FEATURE IN:</a></li>
-          <li>
-            <a href="?tab=Bakery#reports-nav" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Bakery</a>
-          </li>
-          <li>
-            <a href="?tab=FoodManufacturing#reports-nav" class="nav-link pb-1 border-bottom"
-              data-bs-dismiss="offcanvas">Food
-              Manufacturing</a>
-          </li>
-          <li>
-            <a href="?tab=PastryFoodProducts#reports-nav" class="nav-link pb-1 border-bottom"
-              data-bs-dismiss="offcanvas">Pastry Food
-              Products</a>
-          </li>
-          <li>
-            <a href="?tab=PieManufacturers#reports-nav" class="nav-link pb-1 border-bottom"
-              data-bs-dismiss="offcanvas">Pie
-              Manufacturers</a>
-          </li>
-          <li>
-            <a href="?tab=SandwichProducers#reports-nav" class="nav-link pb-1 border-bottom"
-              data-bs-dismiss="offcanvas">Sandwich
-              Producers</a>
-          </li>
-          <li>
-            <a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link pb-1 border-bottom"
-              data-bs-dismiss="offcanvas">Top 500
-              Food Manufacturers</a>
-          </li>
-          <li><a class="nav-link py-1 fw-semibold">SERVICES:</a></li>
-          <li>
-            <a href="#what-we-offer" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">What We Offer</a>
-          </li>
-          <li>
-            <a href="#lets-get-started" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Let's Get
-              Started</a>
-          </li>
-        </ul>
+        <nav aria-label="Mobile navigation">
+          <ul class="list-unstyled d-flex flex-column gap-2 p-3">
+            <li>
+              <h2 class="h6 fw-semibold text-uppercase mb-1">introduction</h2>
+            </li>
+            <li>
+              <a href="#overview" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Overview</a>
+            </li>
+            <li>
+              <h2 class="h6 fw-semibold text-uppercase mb-1">reports you feature in</h2>
+            </li>
+            <li>
+              <a href="?tab=Bakery#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Bakery</a>
+            </li>
+            <li>
+              <a href="?tab=FoodManufacturing#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Food
+                Manufacturing</a>
+            </li>
+            <li>
+              <a href="?tab=PastryFoodProducts#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Pastry Food
+                Products</a>
+            </li>
+            <li>
+              <a href="?tab=PieManufacturers#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Pie
+                Manufacturers</a>
+            </li>
+            <li>
+              <a href="?tab=SandwichProducers#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Sandwich
+                Producers</a>
+            </li>
+            <li>
+              <a href="?tab=Top500FoodManufacturers#reports-nav" class="nav-link pb-1 border-bottom"
+                data-bs-dismiss="offcanvas">Top 500
+                Food Manufacturers</a>
+            </li>
+            <li>
+              <h2 class="h6 fw-semibold text-uppercase mb-1">services</h2>
+            </li>
+            <li>
+              <a href="#what-we-offer" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">What We Offer</a>
+            </li>
+            <li>
+              <a href="#lets-get-started" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Let's Get
+                Started</a>
+            </li>
+          </ul>
+        </nav>
         <div class="d-xl-none d-lg-block menu-lighter">
           <ul class="list-unstyled d-flex flex-column gap-2 p-3">
             <li><a href="#pricing" class="nav-link py-1 border-bottom">Purchase Options</a></li>
@@ -154,7 +172,6 @@
         </div>
       </div>
     </div>
-    </div>
 
     <!-- Demo Modal -->
     <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
@@ -170,7 +187,8 @@
       </div>
     </div>
     <!-- Company Modal -->
-    <div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
+    <div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="companyModalLabel"
+      aria-describedby="companyModalDesc" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content p-3">
           <div class="modal-header">
@@ -181,12 +199,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <p id="companyModalDesc" class="visually-hidden">
+              Please fill out the form below and we will send you an email...
+            </p>
             <p>
               Please fill out the form below and we will send you an email to
               get access to the free analysis of a company contained in the
               industry report:
             </p>
-            <form>
+            <form action="/submit-form-endpoint" method="POST">
               <div class="mb-3">
                 <label for="first-name-1" class="form-label">First name</label>
                 <input type="text" class="form-control" id="first-name-1" placeholder="First name" required />
@@ -235,12 +256,14 @@
       <section id="top-image">
         <div class="container-fluid mt-5 mt-sm-0">
           <div class="row position-relative">
-            <div class="col"></div>
+            <div class="col">
+            </div>
             <div class="col-6">
               <img class="img-fluid" src="./images/hero-image.png" alt="Industry overview illustration" />
             </div>
-            <div class="overLay position-absolute top-0 bottom-0 w-100">
-              <h1 id="hero-heading" class="text-white text-center ms-5 ps-5 d-none d-md-block animate__animated animate__slideInUp animate__delay-1s">
+            <div class="overlay position-absolute top-0 bottom-0 w-100">
+              <h1 id="hero-heading"
+                class="text-white text-center ms-5 ps-5 d-none d-md-block animate__animated animate__slideInUp animate__delay-1s">
                 Always above the line.
                 <span class="red-line-animation"></span>
               </h1>
@@ -268,7 +291,7 @@
           <div class="row g-4">
             <div class="col-md-6">
               <div class="p-4 bg-white rounded h-100 text-center fab-four">
-                <i class="bi bi-people-fill text-primary display-4 mb-3"></i>
+                <i class="bi bi-people-fill text-primary display-4 mb-3" alt="" aria-hidden="true"></i>
                 <h3 class="fw-semibold text-primary">About Us</h3>
                 <p>
                   We specialise in industry and company financial analysis, helping businesses make informed decisions.
@@ -282,7 +305,7 @@
 
             <div class="col-md-6">
               <div class="p-4 bg-white rounded h-100 text-center fab-four">
-                <i class="bi bi-lightbulb-fill text-primary display-4 mb-3"></i>
+                <i class="bi bi-lightbulb-fill text-primary display-4 mb-3" alt="" aria-hidden="true"></i>
                 <h3 class="fw-semibold text-primary">How It Started</h3>
                 <p>
                   Inspired by Samuel Plimsoll's safety line for ships, our approach provides a benchmark for financial
@@ -293,7 +316,7 @@
 
             <div class="col-md-6">
               <div class="p-4 bg-white rounded h-100 text-center fab-four">
-                <i class="bi bi-globe text-primary display-4 mb-3"></i>
+                <i class="bi bi-globe text-primary display-4 mb-3" alt="" aria-hidden="true"></i>
                 <h3 class="fw-semibold text-primary">Our Global Coverage</h3>
                 <p>
                   Our platform delivers insights across 1,600+ global industries, enabling leaders to benchmark
@@ -305,7 +328,7 @@
 
             <div class="col-md-6">
               <div class="p-4 bg-white rounded h-100 text-center fab-four">
-                <i class="bi bi-bar-chart-fill text-primary display-4 mb-3"></i>
+                <i class="bi bi-bar-chart-fill text-primary display-4 mb-3" alt="" aria-hidden="true"></i>
                 <h3 class="fw-semibold text-primary">The Plimsoll Rating</h3>
                 <p>
                   Our proprietary rating system categorizes companies from <strong>Strong</strong> to
@@ -317,6 +340,7 @@
 
             <div class="col-12">
               <div class="p-4 bg-white rounded text-center fab-four">
+                <h3 class="fw-semibold text-primary mb-3">Why Plimsoll?</h3>
                 <p class="mb-0">
                   Based in Stockton-on-Tees, UK, we are committed to simplifying complex financial data into clear,
                   actionable
@@ -335,7 +359,8 @@
         <div class="container">
           <div class="row mb-lg-2">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
-              <h1 class="fw-bold my-lg-4 border-bottom border-danger border-4" data-animate="fadeIn">Reports You Feature In:</h1>
+              <h1 class="fw-bold my-lg-4 border-bottom border-danger border-4" data-animate="fadeIn">Reports You Feature
+                In:</h1>
             </div>
           </div>
         </div>
@@ -348,22 +373,28 @@
             <div class="card-header bg-white border-bottom-0">
               <ul class="nav nav-tabs justify-content-center flex-wrap gap-2" id="tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Bakery" aria-controls="Bakery">Bakery</a>
+                  <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#Bakery"
+                    aria-controls="Bakery">Bakery</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#FoodManufacturing">Food Manufacturing</a>
+                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#FoodManufacturing"
+                    aria-controls="FoodManufacturing">Food Manufacturing</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#PastryFoodProducts">Pastry Food Products</a>
+                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#PastryFoodProducts"
+                    aria-controls="PastryFoodProducts">Pastry Food Products</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#PieManufacturers">Pie Manufacturers</a>
+                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#PieManufacturers"
+                    aria-controls="PieManufacturers">Pie Manufacturers</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#SandwichProducers">Sandwich Producers</a>
+                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#SandwichProducers"
+                    aria-controls="SandwichProducers">Sandwich Producers</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Top500FoodManufacturers">Top 500 Food
+                  <a class="nav-link" data-bs-toggle="tab" data-bs-target="#Top500FoodManufacturers"
+                    aria-controls="Top500FoodManufacturers">Top 500 Food
                     Manufacturers</a>
                 </li>
               </ul>
@@ -371,14 +402,14 @@
             <div class="card-body bg-white text-dark p-4">
               <div class="tab-content text-start">
                 <!--UK Bakery Industry-->
-                <div class="tab-pane fade show active" id="Bakery">
+                <div class="tab-pane fade show active" id="Bakery" role="tabpanel" aria-labelledby="Bakery-tab">
                   <h3>UK Bakery Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the
                     complexity of financial data and a subscription gives you a clear insight into the health, value and
                     prospects of
-                    the 934 leading UK Bakery companies , and how they sit in the overall market.
+                    the 934 leading UK Bakery companies, and how they sit in the overall market.
                   </p>
                   <p>
                     <strong>Based on the data available today, here are some key findings this analysis
@@ -444,13 +475,14 @@
                   </div>
                 </div>
                 <!--UK Food Manufacturing-->
-                <div class="tab-pane fade" id="FoodManufacturing">
+                <div class="tab-pane fade" id="FoodManufacturing" role="tabpanel"
+                  aria-labelledby="FoodManufacturing-tab">
                   <h3>UK Food Manufacturing Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the complexity of financial data and a subscription gives you a clear insight into the
                     health,
-                    value and prospects of the 1456 leading UK Food Manufacturing companies , and how they sit in the
+                    value and prospects of the 1456 leading UK Food Manufacturing companies, and how they sit in the
                     overall
                     market.
                   </p>
@@ -517,13 +549,14 @@
                   </div>
                 </div>
                 <!--UK Pastry Food Products-->
-                <div class="tab-pane fade" id="PastryFoodProducts">
+                <div class="tab-pane fade" id="PastryFoodProducts" role="tabpanel"
+                  aria-labelledby="PastryFoodProducts-tab">
                   <h3>UK Pastry Food Products Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the complexity of financial data and a subscription gives you a clear insight into the
                     health,
-                    value and prospects of the 174 leading UK Pastry Food Products companies , and how they sit in the
+                    value and prospects of the 174 leading UK Pastry Food Products companies, and how they sit in the
                     overall
                     market.
                   </p>
@@ -591,13 +624,13 @@
                   </div>
                 </div>
                 <!--UK Pie Manufacturers-->
-                <div class="tab-pane fade" id="PieManufacturers">
+                <div class="tab-pane fade" id="PieManufacturers" role="tabpanel" aria-labelledby="PieManufacturers-tab">
                   <h3>UK Pie Manufacturers Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the complexity of financial data and a subscription gives you a clear insight into the
                     health,
-                    value and prospects of the 139 leading UK Pie Manufacturers companies , and how they sit in the
+                    value and prospects of the 139 leading UK Pie Manufacturers companies, and how they sit in the
                     overall
                     market.
                   </p>
@@ -664,13 +697,14 @@
                   </div>
                 </div>
                 <!--UK Sandwich Producers-->
-                <div class="tab-pane fade" id="SandwichProducers">
+                <div class="tab-pane fade" id="SandwichProducers" role="tabpanel"
+                  aria-labelledby="SandwichProducers-tab">
                   <h3>UK Sandwich Producers Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the complexity of financial data and a subscription gives you a clear insight into the
                     health,
-                    value and prospects of the 70 leading UK Sandwich Producers companies , and how they sit in the
+                    value and prospects of the 70 leading UK Sandwich Producers companies, and how they sit in the
                     overall
                     market.
                   </p>
@@ -737,13 +771,14 @@
                   </div>
                 </div>
                 <!--UK Top 500 Food Manufacturers-->
-                <div class="tab-pane fade" id="Top500FoodManufacturers">
+                <div class="tab-pane fade" id="Top500FoodManufacturers" role="tabpanel"
+                  aria-labelledby="Top500FoodManufacturers-tab">
                   <h3>UK Top 500 Food Manufacturers Industry Overview</h3>
                   <p>
                     At Plimsoll we do company and market analysis differently. Our unique, continuously updated analysis
                     simplifies the complexity of financial data and a subscription gives you a clear insight into the
                     health,
-                    value and prospects of the UK's Top 500 Food Manufacturers , and how they sit in the overall market.
+                    value and prospects of the UK's Top 500 Food Manufacturers, and how they sit in the overall market.
                   </p>
                   <p>
                     <strong>Based on the data available today, here are some key findings this analysis
@@ -883,8 +918,9 @@
       <section id="what-we-offer" class="details mb-3 position-relative px-lg-5">
         <div class="container">
           <div class="row pt-5">
-            <div class="col-lg 6 px-4">
-              <img src="./images/company-health-check.png" alt="" class="img-fluid rounded-2 justify-content-center" />
+            <div class="col-lg-6 px-4">
+              <img src="./images/company-health-check.png" alt="Company Health Check mockup image"
+                class="img-fluid rounded-2 justify-content-center" />
             </div>
             <div class="col-lg-6">
               <h2 class="fw-bold mt-5 mt-md-0" data-animate="bounceInLeft">Company Health Check</h2>
@@ -1066,7 +1102,7 @@
             </div>
             <div class="col-lg-6">
               <div class="ms-xxl-5">
-                <img src="images/acquisition-image.png" alt="Acquisition Finder"
+                <img src="images/acquisition-image.png" alt="Acquisition Finder mockup"
                   class="img-fluid rounded-2 shadow-lg" />
               </div>
             </div>
@@ -1075,16 +1111,20 @@
       </section>
 
       <!-- Let's Get Started -->
-      <section id="lets-get-started" class="lets-get-started py-3 overflow-hidden placing-order px-lg-5">
+      <section id="lets-get-started"
+        class="lets-get-started py-3 overflow-hidden placing-order px-lg-5 p-3 text-center text-lg-start">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <div class="p-3">
-                <p class="p-dear-2 bg-dark" data-animate="lightSpeedInLeft">Let's Get Started</p>
+                <h2 class="p-dear-2 bg-dark text-white" data-animate="lightSpeedInLeft">Let's Get Started</h2>
                 <p>
-                  Simply email: <strong>s.ogden@plimsoll.co.uk</strong> or call
-                  <strong>01642 626400</strong> to confirm your billing address
-                  and an email for invoicing.
+                  Simply email:
+                  <strong><a class="text-white text-decoration-none"
+                      href="mailto:s.ogden@plimsoll.co.uk">s.ogden@plimsoll.co.uk</a></strong>
+                  or call
+                  <strong><a class="text-white text-decoration-none" href="tel:01642626400">01642 626400</a></strong>
+                  to confirm your billing address and an email for invoicing.
                 </p>
               </div>
             </div>
@@ -1113,7 +1153,8 @@
                     <h4 class="card-title text-danger fw-bold mb-0">£399</h4>
                     <p class="text-primary ms-1 mb-0">+VAT</p>
                   </div>
-                  <a href="#basket" class="btn btn-success text-white my-4 rounded-1">Add to Basket</a>
+                  <button type="button" href="#basket" class="btn btn-success text-white my-4 rounded-1">Add to
+                    Basket</button>
                 </div>
               </div>
             </div>
@@ -1129,7 +1170,8 @@
                     <h4 class="card-title text-danger fw-bold mb-0">£649</h4>
                     <p class="text-primary ms-1 mb-0">+VAT</p>
                   </div>
-                  <a href="#basket" class="btn btn-success text-white my-4 rounded-1">Add to Basket</a>
+                  <button type="button" href="#basket" class="btn btn-success text-white my-4 rounded-1">Add to
+                    Basket</button>
                 </div>
               </div>
             </div>
@@ -1170,15 +1212,16 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1 class="pb-4" data-animate="fadeIn">Frequently Asked Questions</h1>
-              <div class="accordion accordion-flush text-start" id="accordionFlushExample">
+              <h1 id="faq-heading" class="pb-4" data-animate="fadeIn">Frequently Asked Questions</h1>
+              <div class="accordion accordion-flush text-start" id="accordionFlushExample" role="region"
+                aria-labelledby="faq-heading">
                 <div class="accordion-item border rounded shadow-sm mb-3">
                   <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed fw-bold text-primary faq-title" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
-                    aria-controls="flush-collapseOne">
-                    <i class="bi bi-question-circle me-2"></i> How do you choose the companies included?
-                  </button>
+                      data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                      aria-controls="flush-collapseOne">
+                      <i class="bi bi-question-circle me-2"></i> How do you choose the companies included?
+                    </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample">
@@ -1308,11 +1351,14 @@
                   </h2>
                   <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">The Plimsoll Analysis is provided online in our exclusive format TALAT –
-                      Take
-                      A Look At That. Continuously updated to give you the most up to date view of individual companies
-                      and
-                      the wider market, our unique format of analysis includes a host of interactive features including:
+                    <div class="accordion-body">
+                      <p>The Plimsoll Analysis is provided online in our exclusive format TALAT –
+                        Take
+                        A Look At That. Continuously updated to give you the most up to date view of individual
+                        companies
+                        and
+                        the wider market, our unique format of analysis includes a host of interactive features
+                        including:</p>
                       <ul>
                         <li>Ability to filter companies by size, region, growth, profitability, best acquisitions and
                           much
@@ -1429,14 +1475,16 @@
                   Scotswood House, Teesdale South, Stockton on Tees, TS17 6SB, United Kingdom
                 </p>
                 <p class="mb-2">
-                  <i class="bi bi-telephone-fill me-2"></i> +(0)1642 626400 |
-                  <i class="bi bi-printer-fill me-2"></i> +44(01642 626410) |
+                  <i class="bi bi-telephone-fill me-2" title="Telephone" aria-label="Telephone"></i> <a
+                    href="tel:+441642626400" class="text-white text-decoration-none">+44 (0)1642 626400 |</a>
+                  <i class="bi bi-printer-fill me-2" title="Fax" aria-label="Fax"></i><a href="tel:+441642626400"
+                    class="text-white text-decoration-none">+44 (01642 626410) |</a>
                   <i class="bi bi-envelope-fill me-2"></i> <a href="mailto:s.ogden@plimsoll.co.uk"
-                    class="text-white text-decoration-underline">s.ogden@plimsoll.co.uk</a>
+                    class="text-white text-decoration-none">s.ogden@plimsoll.co.uk</a>
                 </p>
                 <p class="mb-0">
                   <i class="bi bi-globe me-2"></i> <a href="https://www.plimsoll.co.uk"
-                    class="text-white text-decoration-underline">www.plimsoll.co.uk</a>
+                    class="text-white text-decoration-none">www.plimsoll.co.uk</a>
                 </p>
                 <p class="mt-3 small">
                   Registered in England & Wales No: 2102017 | VAT Registration: GB 441571072
@@ -1457,7 +1505,7 @@
               <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
                 <a href="https://www.facebook.com/plimsollpublishing/" class="text-decoration-none"
                   title="Visit our Facebook page" target="_blank" rel="noopener">
-                  <i class="fab fa-facebook fa-2x text-light mx-2"></i>
+                  <i class="fab bi-facebook fa-2x text-light mx-2"></i>
                 </a>
                 <a href="https://x.com/PPublishingLtd" class="text-decoration-none" title="Visit our X page"
                   target="_blank" rel="noopener">
@@ -1465,10 +1513,10 @@
                 </a>
                 <a href="https://www.instagram.com/plimsollpublishing/" class="text-decoration-none"
                   title="Visit our Instagram page" target="_blank" rel="noopener">
-                  <i class="fab fa-instagram fa-2x text-light mx-2"></i>
+                  <i class="fab bi-instagram fa-2x text-light mx-2"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/plimsoll/" class="text-decoration-none"
-                  title="Visit our LikedIn page" target="_blank" rel="noopener">
+                  title="Visit our LinkedIn page" target="_blank" rel="noopener">
                   <i class="fab bi-linkedin fa-2x text-light mx-2"></i>
                 </a>
                 <a href="http://www.youtube.com/PlimsollPub" class="text-decoration-none" title="Visit our YouTube page"

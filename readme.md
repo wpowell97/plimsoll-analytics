@@ -1,6 +1,6 @@
 # Plimsoll Report Website
 
-Bootstrap website for showcasing company and industry report data. This website has a light, business-like design with a burger menu and modals.
+Bootstrap website for showcasing company and industry report data. This website has a light, business-like design with a burger menu for medium screens downwards and modals.
 
 <img src="/images/portfolio-screen.png"  />
 
@@ -9,13 +9,17 @@ Bootstrap website for showcasing company and industry report data. This website 
 - Modern layout with custom colours/styles/backgrounds
 - Responsive design
 - Left hand side menu for larger screens containing two button modals
-- Burger menu with included button modals (Mobile Only)
+- Burger menu with included button modals (Mobile / Small Tablet Only)
 - Jump to top button
 - Sections highlighted when active
-- Analysis Report Data
-- Findings Information
+- Hero Image with animated text
+- Overview of the company and information
+- Reports the industry feature in
+- What we offer section
+- How to get started area
 - Purchase Options
-- 3 Modals achieving outreach
+- Frequently asked questions accordions
+- Stylised footer with social media icons
 
 ## Usage
 
