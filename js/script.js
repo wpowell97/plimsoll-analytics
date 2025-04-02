@@ -168,6 +168,56 @@ document.addEventListener("DOMContentLoaded", function () {
   userScroll();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // ✅ Animate elements with fadeIn on scroll (or any Animate.css class)
+  const animatedEls = document.querySelectorAll('[data-animate]');
+
+  animatedEls.forEach((el) => {
+    const animationClass = `animate__${el.dataset.animate}`;
+    el.classList.remove('animate__animated', animationClass);
+    el.style.visibility = 'hidden';
+    el.dataset.animationClass = animationClass;
+  });
+
+  const fadeInObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        const el = entry.target;
+        el.style.visibility = 'visible';
+        el.classList.add('animate__animated', el.dataset.animationClass);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  animatedEls.forEach((el) => fadeInObserver.observe(el));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Animate elements with lightSpeedInLeft on scroll
+  const animatedEls = document.querySelectorAll('[data-animate="lightSpeedInLeft"]');
+
+  animatedEls.forEach((el) => {
+    const animationClass = 'animate__lightSpeedInLeft';
+    el.classList.remove('animate__animated', animationClass);
+    el.style.visibility = 'hidden';
+    el.dataset.animationClass = animationClass;
+  });
+
+  const lightSpeedObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        const el = entry.target;
+        el.style.visibility = 'visible';
+        el.classList.add('animate__animated', el.dataset.animationClass);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  animatedEls.forEach((el) => lightSpeedObserver.observe(el));
+});
+
 // Another DOMContentLoaded event listener for a separate animation
 document.addEventListener("DOMContentLoaded", function () {
   // Select the element with class "order-today"
