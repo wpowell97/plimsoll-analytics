@@ -309,31 +309,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 // GOLD DUST - Detection of active link to then turn text bold
+// Refactored JavaScript for tab activation and sidebar highlight sync
+
+// Run once DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+  const sidebarLinks = document.querySelectorAll(".sidebar .nav-link");
   const firstSection = sections.length > 0 ? sections[0] : null;
   let lastActiveSection = "";
+
+  // Filter nav links that are true in-page links (not ?tab= style)
+  const validScrollLinks = navLinks.filter((link) => {
+    const href = link.getAttribute("href");
+    return href && href.startsWith("#") && !href.includes("?tab=");
+  });
+
+  function highlightSidebarLink(tabId) {
+    sidebarLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const linkTab = href && href.includes("?tab=") ? href.split("?tab=")[1].split("#")[0] : null;
+      link.classList.remove("fw-bold", "text-secondary", "active");
+      if (linkTab === tabId) {
+        link.classList.add("fw-bold", "text-secondary", "active");
+      }
+    });
+  }
 
   function changeActiveLink() {
     let currentSection = lastActiveSection;
 
-    // Ignore report tab links with ?tab=
-    const validLinks = Array.from(navLinks).filter((link) => {
-      const href = link.getAttribute("href");
-      return href && href.startsWith("#") && !href.includes("?tab=");
-    });
-
-    // Clear highlights if above the first section
+    // Reset above first section
     if (firstSection && window.scrollY < firstSection.offsetTop - 150) {
-      validLinks.forEach((link) =>
+      validScrollLinks.forEach((link) =>
         link.classList.remove("active", "fw-bold", "text-secondary")
       );
       lastActiveSection = "";
       return;
     }
 
-    // Detect current visible section
+    // Find section in view
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 200;
       const sectionBottom = sectionTop + section.offsetHeight + 200;
@@ -342,55 +357,51 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Only update if changed
+    // Remove bold from sidebar tab links if user scrolls past reports-nav
+    const reportsSection = document.getElementById("reports-nav");
+    if (
+      reportsSection &&
+      window.scrollY > reportsSection.offsetTop + reportsSection.offsetHeight
+    ) {
+      document
+        .querySelectorAll('.sidebar .nav-link[href*="?tab="]')
+        .forEach((link) => {
+          link.classList.remove("fw-bold", "text-secondary", "active");
+        });
+    }
+
     if (currentSection !== lastActiveSection) {
       lastActiveSection = currentSection;
 
-      validLinks.forEach((link) => {
+      validScrollLinks.forEach((link) => {
         const href = link.getAttribute("href");
         const targetId = href && href.startsWith("#") ? href.substring(1) : "";
-
-        // Remove active class from all links
         link.classList.remove("active", "fw-bold", "text-secondary");
-
-        // Add active class only to the current section
         if (targetId === currentSection) {
           link.classList.add("active", "fw-bold", "text-secondary");
         }
       });
-
-      // Explicitly handle the Bakery tab
-      const bakeryLink = document.querySelector('.nav-link[href="#reports-nav"]');
-      if (bakeryLink && currentSection !== "reports-nav") {
-        bakeryLink.classList.remove("active", "fw-bold", "text-secondary");
-      }
     }
   }
 
-  // Add event listener for scroll
+  // Initial scroll detection and on scroll
   window.addEventListener("scroll", changeActiveLink);
-  changeActiveLink(); // Initial run
+  changeActiveLink();
 
-  // Add click event listener to ensure only clicked tab is bold
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      validLinks.forEach((link) =>
-        link.classList.remove("active", "fw-bold", "text-secondary")
-      );
-      this.classList.add("active", "fw-bold", "text-secondary");
+  // Tab click: Update tab + sidebar highlight
+  document.querySelectorAll('a[data-bs-toggle="tab"]').forEach((tabLink) => {
+    tabLink.addEventListener("shown.bs.tab", function () {
+      const tabId = this.getAttribute("data-bs-target")?.substring(1);
+      highlightSidebarLink(tabId);
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // On load: Handle tab param from URL
   const urlParams = new URLSearchParams(window.location.search);
   const tabId = urlParams.get("tab");
 
   if (tabId) {
-    // Activate correct Bootstrap tab
-    const tabTriggerEl = document.querySelector(
-      `.nav-link[data-bs-target="#${tabId}"]`
-    );
+    const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
     const reportsSection = document.getElementById("reports-nav");
 
     if (tabTriggerEl && reportsSection) {
@@ -400,81 +411,62 @@ document.addEventListener("DOMContentLoaded", function () {
       history.replaceState(null, "", window.location.pathname + "#reports-nav");
     }
 
-    // Sidebar link highlighting
-    document.querySelectorAll(".sidebar .nav-link").forEach((link) => {
-      const href = link.getAttribute("href");
-      const linkTab =
-        href && href.includes("?tab=")
-          ? href.split("?tab=")[1].split("#")[0]
-          : null;
+    highlightSidebarLink(tabId);
+  }
 
-      // Clear all previous styles
-      link.classList.remove("fw-bold", "text-secondary", "active");
+  // Offcanvas nav tab handler
+  document.querySelectorAll(".offcanvas a.nav-link").forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const href = this.getAttribute("href");
 
-      // Highlight only matching sidebar link
-      if (linkTab === tabId) {
-        link.classList.add("fw-bold", "text-secondary" );
+      if (href && href.includes("?tab=")) {
+        event.preventDefault();
+
+        const [hash, query] = href.split("?");
+        const params = new URLSearchParams(query);
+        const tabId = params.get("tab");
+
+        const targetSection = document.querySelector(hash);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
+        if (tabTriggerEl) {
+          const tab = new bootstrap.Tab(tabTriggerEl);
+          tab.show();
+        }
+
+        highlightSidebarLink(tabId);
+        history.replaceState(null, "", window.location.pathname + hash);
       }
     });
-  }
-});
-document.querySelectorAll(".offcanvas a.nav-link").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    const href = this.getAttribute("href");
-
-    // Only handle links with tab parameters
-    if (href && href.includes("?tab=")) {
-      event.preventDefault(); // prevent default behavior
-
-      const [hash, query] = href.split("?"); // e.g. "#reports-nav", "tab=Bakery"
-      const params = new URLSearchParams(query);
-      const tabId = params.get("tab");
-
-      // Scroll to section
-      const targetSection = document.querySelector(hash);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Activate tab
-      const tabTriggerEl = document.querySelector(
-        `.nav-link[data-bs-target="#${tabId}"]`
-      );
-      if (tabTriggerEl) {
-        const tab = new bootstrap.Tab(tabTriggerEl);
-        tab.show();
-      }
-
-      // Optional: clean up URL
-      history.replaceState(null, "", window.location.pathname + hash);
-    }
   });
-});
-const scrollSpy = new bootstrap.ScrollSpy(
-  document.getElementById("scrollspyContainer"),
-  {
-    target: "#sideNav",
-    offset: 100,
+
+  // Optional ScrollSpy (if still needed)
+  const scrollSpyContainer = document.getElementById("scrollspyContainer");
+  if (scrollSpyContainer) {
+    new bootstrap.ScrollSpy(scrollSpyContainer, {
+      target: "#sideNav",
+      offset: 100,
+    });
   }
-);
-document.addEventListener("DOMContentLoaded", function () {
+
+  // Sidebar hide/show based on intersection
   const sidebar = document.querySelector(".sidebar");
   const endTrigger = document.getElementById("sidebar-end-trigger");
 
   if (sidebar && endTrigger) {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          sidebar.classList.add("hidden");
-        } else {
-          sidebar.classList.remove("hidden");
-        }
-      },
-      {
-        root: null,
-        threshold: 0,
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        sidebar.classList.add("hidden");
+      } else {
+        sidebar.classList.remove("hidden");
       }
-    );
+    }, {
+      root: null,
+      threshold: 0,
+    });
 
     observer.observe(endTrigger);
   }
