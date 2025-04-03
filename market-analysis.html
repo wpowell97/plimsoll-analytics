@@ -92,7 +92,7 @@
         </button>
       </nav>
     </div>
-
+  
     <!-- Offcanvas Menu for Small Screens -->
     <div class="offcanvas offcanvas-start d-xl-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div class="offcanvas-header">
@@ -114,8 +114,7 @@
               <h2 class="h6 fw-semibold text-uppercase mb-1">reports you feature in</h2>
             </li>
             <li>
-              <a href="?tab=Bakery#reports-nav" class="nav-link pb-1 border-bottom"
-                data-bs-dismiss="offcanvas">Bakery</a>
+              <a href="?tab=Bakery#reports-nav" class="nav-link pb-1 border-bottom" data-bs-dismiss="offcanvas">Bakery</a>
             </li>
             <li>
               <a href="?tab=FoodManufacturing#reports-nav" class="nav-link pb-1 border-bottom"
@@ -156,7 +155,8 @@
         </nav>
         <div class="d-xl-none d-lg-block menu-lighter">
           <ul class="list-unstyled d-flex flex-column gap-2 p-3">
-            <li><a href="#pricing" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">Purchase Options</a></li>
+            <li><a href="#pricing" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">Purchase Options</a>
+            </li>
             <li><a href="#faqs" class="nav-link py-1 border-bottom" data-bs-dismiss="offcanvas">FAQ's</a></li>
             <li>
               <button type="button" class="btn fw-semibold rounded-1 btn-primary w-100" data-bs-toggle="modal"
@@ -165,8 +165,8 @@
               </button>
             </li>
             <li>
-              <button type="button" class="btn fw-semibold rounded-1 btn-outline-primary w-100 px-0" data-bs-toggle="modal"
-                data-bs-target="#companyModal" data-bs-dismiss="offcanvas">
+              <button type="button" class="btn fw-semibold rounded-1 btn-outline-primary w-100 px-0"
+                data-bs-toggle="modal" data-bs-target="#companyModal" data-bs-dismiss="offcanvas">
                 Free Company Example
               </button>
             </li>
@@ -174,13 +174,15 @@
         </div>
       </div>
     </div>
-
+  
     <!-- Demo Modal -->
-    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-describedby="demoModalDesc"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content position-relative">
           <!-- Close button in top right -->
-          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="Close"></button>
           <!-- Start of Meetings Embed Script -->
           <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/wpowell?embed=true">
           </div>
@@ -195,11 +197,13 @@
       aria-describedby="companyModalDesc" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content p-3">
-          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="Close"></button>
           <div class="modal-header">
             <h5 class="modal-title" id="companyModalLabel">
               Receive a free analysis of a company within the Bakery industry
-            </h5>          </div>
+            </h5>
+          </div>
           <div class="modal-body">
             <p id="companyModalDesc" class="visually-hidden">
               Please fill out the form below and we will send you an email...
@@ -212,19 +216,23 @@
             <form action="/submit-form-endpoint" method="POST">
               <div class="mb-3">
                 <label for="first-name-1" class="form-label">First name</label>
-                <input type="text" class="form-control" id="first-name-1" autocomplete="given-name" placeholder="First name" required />
+                <input type="text" class="form-control" id="first-name-1" autocomplete="given-name"
+                  placeholder="First name" required />
               </div>
               <div class="mb-3">
                 <label for="surname-1" class="form-label">Surname</label>
-                <input type="text" class="form-control" id="surname-1" autocomplete="family-name" placeholder="Surname" required />
+                <input type="text" class="form-control" id="surname-1" autocomplete="family-name" placeholder="Surname"
+                  required />
               </div>
               <div class="mb-3">
                 <label for="phone" class="form-label">Telephone Number</label>
-                <input type="tel" class="form-control" id="phone" autocomplete="tel" placeholder="Your contact number" required />
+                <input type="tel" class="form-control" id="phone" autocomplete="tel" placeholder="Your contact number"
+                  required />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Your Email Address</label>
-                <input type="email" class="form-control" id="email" autocomplete="email" placeholder="Your Email Address" required />
+                <input type="email" class="form-control" id="email" autocomplete="email" placeholder="Your Email Address"
+                  required />
               </div>
               <div class="mb-3">
                 <label for="hear-about" class="form-label">How did you hear about us?</label>
@@ -241,19 +249,14 @@
                 </select>
                 <div class="mb-3 d-none" id="hear-about-other-wrapper">
                   <label for="hear-about-other" class="form-label">Please specify</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="hear-about-other"
-                    name="hear-about-other"
-                    placeholder="Let us know how you heard about us"
-                  />
+                  <input type="text" class="form-control" id="hear-about-other" name="hear-about-other"
+                    placeholder="Let us know how you heard about us" />
                 </div>
               </div>
               <button type="submit" class="btn fw-semibold rounded-1 btn-primary">
                 Request Analysis
               </button>
-            </form>            
+            </form>
           </div>
         </div>
       </div>

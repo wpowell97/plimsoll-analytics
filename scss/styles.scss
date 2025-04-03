@@ -151,25 +151,8 @@ html {
   width: 100%;
 }
 
-.stat-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color: white;
-}
-
-.stat-value {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: white;
-}
-
 .counter {
   color: #55bafd;
-}
-
-.separator {
-  border: #55bafd;
 }
 
 .quote-bg {
@@ -247,15 +230,6 @@ html {
   opacity: 1;
 }
 
-.stat-column {
-  background-color: #42677b;
-  padding: 15px;
-  padding-top: 40px;
-  margin: 20px;
-  color: white;
-  /* Ensures text is readable */
-}
-
 .lets-get-started p {
   color: white;
 }
@@ -288,11 +262,6 @@ html {
   right: 0;
   top: 20%; // If you want to set a smaller height and center it, change this value
   background-color: #000000; // The color of your border
-}
-
-.card-body-2 {
-  border: 2px solid #55bafd;
-  padding: 10px;
 }
 
 .legal p {
@@ -328,33 +297,6 @@ html {
     // Bootstrap's lg breakpoint
     font-size: 1.25rem; // Equivalent to fs-5
   }
-}
-
-.red-box {
-  width: fit-content;
-}
-
-.order-today {
-  background: #de2a37;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: fit-content;
-  margin: auto;
-  border-bottom-right-radius: 1rem;
-}
-
-.order-today-hidden {
-  visibility: hidden;
-}
-
-.pricing-box {
-  background: #de2a37;
-  padding: 10px 15px;
-  width: fit-content;
-  text-align: center; // Ensures text inside is center-aligned
-  margin: 0 auto; // Centers the box horizontally
 }
 
 .pricing .card {
@@ -471,13 +413,6 @@ html {
   .red-line {
     width: 100%;
   }
-}
-
-.background-plimsoll {
-  background: url("../images/logo-overlay.png") center center no-repeat;
-  background-size: cover;
-  background-size: 20%;
-  background-position: 90% 95%;
 }
 
 @media (max-width: 576px) {
