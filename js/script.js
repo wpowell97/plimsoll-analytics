@@ -246,68 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(target);
 });
 
-// Wait until the DOM is fully loaded before executing the script
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all navigation links inside the offcanvas menu
-  const dropdownItems = document.querySelectorAll(".nav-link");
-
-  // Add a click event listener to each navigation link
-  dropdownItems.forEach((item) => {
-    item.addEventListener("click", function (event) {
-      // Get the ID of the target section (removing '#' from the href)
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-
-      // If the target section exists on the page
-      if (targetElement) {
-        // Select the offcanvas menu and create a Bootstrap Offcanvas instance
-        const offcanvasElement = document.querySelector(".offcanvas");
-        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
-
-        // Close the offcanvas menu
-        bsOffcanvas.hide();
-
-        // Wait for the offcanvas menu to fully close before scrolling
-        offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
-          // Calculate the position of the target element (offset by 100px for spacing)
-          const targetPosition =
-            targetElement.getBoundingClientRect().top + window.scrollY - 100;
-
-          // Smoothly scroll to the target section
-          window.scrollTo({ top: targetPosition, behavior: "smooth" });
-
-          // Remove any lingering offcanvas backdrop (prevents overlay issues)
-          const backdrop = document.querySelector(".offcanvas-backdrop");
-          if (backdrop) {
-            backdrop.remove();
-          }
-        });
-      }
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all offcanvas elements and create Bootstrap Offcanvas instances
-  var offcanvasElementList = [].slice.call(
-    document.querySelectorAll(".offcanvas")
-  );
-  var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
-    return new bootstrap.Offcanvas(offcanvasEl);
-  });
-
-  // Attach an event listener to every navigation link inside the offcanvas menu
-  document
-    .querySelectorAll(".offcanvas a.nav-link")
-    .forEach(function (element) {
-      element.addEventListener("click", function () {
-        // Loop through all offcanvas instances and close them
-        offcanvasList.forEach(function (offcanvas) {
-          offcanvas.hide();
-        });
-      });
-    });
-});
 // GOLD DUST - Detection of active link to then turn text bold
 // Refactored JavaScript for tab activation and sidebar highlight sync
 
@@ -414,50 +352,6 @@ document.addEventListener("DOMContentLoaded", function () {
     highlightSidebarLink(tabId);
   }
 
-  // Offcanvas nav tab handler
-  document.querySelectorAll(".offcanvas a.nav-link").forEach((link) => {
-    link.addEventListener("click", function (event) {
-      const href = this.getAttribute("href");
-  
-      if (href && href.includes("?tab=")) {
-        event.preventDefault();
-  
-        // Correct order: split on `#` first to get the anchor, then on `?`
-        const [urlPart, hash] = href.split("#"); // 'urlPart' will be '?tab=Bakery'
-        const params = new URLSearchParams(urlPart.split("?")[1]);
-        const tabId = params.get("tab");
-  
-        // Scroll to anchor
-        if (hash) {
-          const targetSection = document.querySelector("#" + hash);
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-  
-        // Activate correct tab
-        const tabTriggerEl = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
-        if (tabTriggerEl) {
-          const tab = new bootstrap.Tab(tabTriggerEl);
-          tab.show();
-        }
-  
-        // Update URL
-        const newUrl = window.location.pathname + "?tab=" + tabId + (hash ? "#" + hash : "");
-        history.replaceState(null, "", newUrl);
-  
-        // Manually close offcanvas
-        const offcanvasEl = document.querySelector(".offcanvas.show");
-        if (offcanvasEl) {
-          const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
-          if (bsOffcanvas) {
-            bsOffcanvas.hide();
-          }
-        }
-      }
-    });
-  });
-
   // Optional ScrollSpy (if still needed)
   const scrollSpyContainer = document.getElementById("scrollspyContainer");
   if (scrollSpyContainer) {
@@ -485,4 +379,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(endTrigger);
   }
+});
+// Offcanvas menu handling
+// This code handles the offcanvas menu and its links
+document.addEventListener("DOMContentLoaded", function () {
+  const offcanvasElement = document.querySelector(".offcanvas");
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+
+  document.querySelectorAll(".offcanvas a.nav-link").forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const href = this.getAttribute("href");
+
+      // Handle tab links like "?tab=Bakery#reports-nav"
+      if (href.includes("?tab=")) {
+        event.preventDefault();
+
+        const [urlPart, hash] = href.split("#");
+        const params = new URLSearchParams(urlPart.split("?")[1]);
+        const tabId = params.get("tab");
+
+        // Activate the tab
+        const tabTrigger = document.querySelector(`.nav-link[data-bs-target="#${tabId}"]`);
+        if (tabTrigger) {
+          const tab = new bootstrap.Tab(tabTrigger);
+          tab.show();
+        }
+
+        // Scroll to anchor after a short delay
+        if (hash) {
+          const target = document.getElementById(hash);
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+          }
+        }
+
+        // Update URL
+        const newUrl = window.location.pathname + "?tab=" + tabId + (hash ? "#" + hash : "");
+        history.replaceState(null, "", newUrl);
+      }
+
+      // Close the offcanvas (if open)
+      if (bsOffcanvas._isShown) {
+        bsOffcanvas.hide();
+      }
+    });
+  });
+
+  // Fix: If offcanvas doesn't close when clicking the close (X) button
+  document.querySelectorAll('[data-bs-dismiss="offcanvas"]').forEach((el) => {
+    el.addEventListener("click", () => {
+      if (bsOffcanvas._isShown) {
+        bsOffcanvas.hide();
+      }
+    });
+  });
 });
