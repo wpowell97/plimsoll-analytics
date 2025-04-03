@@ -220,30 +220,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Another DOMContentLoaded event listener for a separate animation
 document.addEventListener("DOMContentLoaded", function () {
-  // Select the element with class "order-today"
   const target = document.querySelector(".order-today");
 
-  // Create an IntersectionObserver to detect when "order-today" comes into view
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        // If the element is in view, trigger the animation
-        if (entry.isIntersecting) {
-          target.classList.remove("order-today-hidden");
-          target.classList.add("animate__slideInRight");
+  if (target) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            target.classList.remove("order-today-hidden");
+            target.classList.add("animate__slideInRight");
 
-          // Stop observing once animation is triggered to avoid repeating
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    }
-  );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-  // Start observing the target element
-  observer.observe(target);
+    observer.observe(target);
+  } else {
+    console.warn(".order-today element not found — skipping observer.");
+  }
 });
 
 // GOLD DUST - Detection of active link to then turn text bold
@@ -434,5 +431,21 @@ document.addEventListener("DOMContentLoaded", function () {
         bsOffcanvas.hide();
       }
     });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("hear-about");
+  const otherWrapper = document.getElementById("hear-about-other-wrapper");
+  const otherInput = document.getElementById("hear-about-other");
+
+  select.addEventListener("change", function () {
+    if (select.value === "Other") {
+      otherWrapper.classList.remove("d-none");
+      otherInput.setAttribute("required", true);
+    } else {
+      otherWrapper.classList.add("d-none");
+      otherInput.removeAttribute("required");
+      otherInput.value = ""; // optional: clear value if they switch away
+    }
   });
 });
