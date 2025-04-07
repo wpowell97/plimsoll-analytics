@@ -38,9 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 50) {
       navbar.classList.add("navbar-sticky", "scrolled");
       if (toTopBtn) toTopBtn.classList.add("show");
+      toTopBtn.style.opacity = "0.8";
     } else {
       navbar.classList.remove("navbar-sticky", "scrolled");
       if (toTopBtn) toTopBtn.classList.remove("show");
+      toTopBtn.style.opacity = "0";
     }
   }
 
