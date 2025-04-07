@@ -75,6 +75,7 @@ html {
   color: #333;
   transition: all 0.3s ease;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 #reports-nav .nav-tabs .nav-link.active {
@@ -85,8 +86,10 @@ html {
 
 #reports-nav .card {
   transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0);
+  will-change: box-shadow;
+  transform: translateZ(0);
 }
-
 #reports-nav .card:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
 }
